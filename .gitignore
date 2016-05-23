@@ -1,0 +1,34 @@
+# ignore cache folder
+/silverstripe-cache/
+
+# ignore all environment files
+_ss_environment.php
+
+# ignore build tools
+/tools/phing-metadata
+
+# ignore composer vendor folder
+/vendor/
+
+assets/*
+_ss_environment.php
+tools/phing-metadata
+silverstripe-cache
+.buildpath
+.project
+.settings
+.idea
+.DS_Store
+vendor/
+themes/*/node_modules
+themes/simple/*
+cms/*
+framework/*
+reports/*
+siteconfig/*
+index.php
+install-frameworkmissing.html
+install.php
+web.config
+mysite/_config.php
+themes/*/.sass-cache
