@@ -1,0 +1,24 @@
+{
+	"name": "npr/gen-listen-cms",
+	"type": "silverstripe-theme",
+	"description": "SilverStripe Theme Based on Skeleton: A Beautiful Boilerplate for Responsive, Mobile-Friendly Development.",
+	"keywords": ["silverstripe", "theme", "skeleton", "css", "responsive"],
+	"license": "MIT Open Source License",
+	"authors": [
+		{
+			"name": "npr",
+			"homepage": "http://www.npr.org"
+		}
+	],
+	"require":
+	{
+		"composer/installers": "*",
+		"silverstripe/framework": "~3.0"
+	},
+	"extra": {
+		"installer-name": "gen-listen-cms",
+		"branch-alias": {
+			"dev-master": "0.9.x-dev"
+		}
+	}
+}
