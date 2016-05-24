@@ -132,6 +132,19 @@ body.page {
         text-transform: uppercase;
     }
 
+    a.link-button,
+    button,
+    input[type="submit"] {
+        background-color: $buttonBg;
+        color: $buttonTxt;
+    }
+
+    a.link-button:hover,
+    button:hover,
+    input[type="submit"]:hover {
+        color: $buttonOverTxt;
+    }
+
     .legal,
     .email-server-message {
         text-align: center;
@@ -167,10 +180,30 @@ body.page {
     //     }
     // }
 
-    footer .site-nav {
-        vertical-align: middle;
-        * {
+    footer {
+        width: 100%;
+        padding-left: 20px;
+        .site-nav {
             vertical-align: middle;
+            * {
+                vertical-align: middle;
+            }
+            .nav-links {
+                text-transform: uppercase;
+                display: inline-block;
+                a {
+                    text-decoration: none;
+                }
+                a.nav-link {
+                    padding-right: 10px;
+                    border-right: solid 1px $white;
+                    padding-left: 5px;
+                    white-space: nowrap;
+                }
+                a.nav-link.last {
+                    border-right: 0;
+                }
+            }
         }
     }
 
@@ -307,22 +340,6 @@ body.page {
 
         // }
     }
-
-    footer {
-        .nav-links {
-            display: inline-block;
-            a.nav-link {
-                padding-right: 10px;
-                border-right: solid 1px $white;
-                padding-left: 5px;
-                white-space: nowrap;
-            }
-            a.nav-link.last {
-                border-right: 0;
-            }
-        }
-    }
-
 
 }
 
