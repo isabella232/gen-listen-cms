@@ -1,1 +1,1 @@
-$ListeningPartyForm
+<% include ListeningPartyForm %>
