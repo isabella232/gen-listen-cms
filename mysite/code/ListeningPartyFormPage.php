@@ -43,7 +43,8 @@ class ListeningPartyFormPage_Controller extends Page_Controller
             TextField::create('hostingDate', 'I plan to host my party on'),
             TextField::create('twitter', 'Twitter'),
             TextField::create('instagram', 'Instagram'),
-            TextField::create('memberStation', 'Local NPR member station'));
+            $this->createStationPickerField("Search station name, location, or zip code.")
+        );
 
         $actions = new FieldList(
             new FormAction('doSubmit', 'Submit')
@@ -72,8 +73,38 @@ class ListeningPartyFormPage_Controller extends Page_Controller
         $hostingDate = $data['hostingDate'];
         $twitter = $data['twitter'];
         $instagram = $data['instagram'];
-        $memberStation = $data['memberStation'];
+        $stationId = $data['stationId'];
+
+
+        try
+        {
+            $user = new NPRUser($email, intval($stationId));
+            $user->submit();
+        }
+        catch (Exception $e)
+        {
+            error_log("Exception: $e");
+            if (!empty($errorMsg))
+            {
+                $form->addErrorMessage("Error", $errorMsg, "bad");
+            }
+            else
+            {
+                $form->addErrorMessage("Error", "Hm. Looks like things are busy at the moment.", "bad", $escapeHtml = false);
+            }
+            return $this->redirectBack();
+        }
 
         return $this->redirect(Director::baseURL() . 'success');
+    }
+
+    private function createStationPickerField($placeholder = null)
+    {
+        $field = new TextField('PrimaryStationPicker', 'Search for your favorite NPR Member station');
+
+        if (!empty($placeholder)) {
+            $field->setAttribute('placeholder', $placeholder);
+        }
+        return $field;
     }
 }
