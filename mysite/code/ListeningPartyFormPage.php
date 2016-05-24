@@ -11,12 +11,16 @@ class ListeningPartyFormPage extends Page
 
     private static $db = array(
         'BannerText' => 'HTMLText',
-        'BannerGraphic' => 'HTMLText'
+        'BannerGraphic' => 'HTMLText',
+        'PrimaryInformationalHeader' => 'Text',
+        'PrimaryInformationalText' => 'HTMLText'
     );
     public function getCMSFields() {
         $fields = parent::getCMSFields();
         $fields->addFieldToTab('Root.Main', new HTMLEditorField('BannerText', 'Banner Text '));
         $fields->addFieldToTab('Root.Main', new HTMLEditorField('BannerGraphic', 'Banner Graphic'));
+        $fields->addFieldToTab('Root.Main', new TextField('PrimaryInformationalHeader', 'Primary Informational Header'));
+        $fields->addFieldToTab('Root.Main', new HTMLEditorField('PrimaryInformationalText', 'Primary Informational Text'));
         return $fields;
     }
 }
