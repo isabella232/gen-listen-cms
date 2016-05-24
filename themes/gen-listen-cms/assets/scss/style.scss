@@ -5,1748 +5,1746 @@
 @import "./skeleton/skeleton.scss";
 @import "_variables.scss";
 
-@import "browser.scss";
-@import "voting.scss";
-
 /**
  * Site-specific modifications below here
  */
 
 small.error { color : red; }
 
+
 /* #Basic Styles
 ================================================== */
-body.page {
-
-
-    main {
-        margin-top: 88px;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $white;
-        margin-bottom: 40px;
-        font-weight: bold;
-        font-family: $fontStack;
-        text-transform: lowercase;
-    }
-
-    strong {
-        color: inherit;
-    }
-
-    font: 14px/21px $fontStack;
-    -webkit-text-size-adjust: none;
-
-    select {
-        font: 13px $fontStack;
-    }
-
-    button,
-    input[type="submit"] {
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        margin: 0;
-        cursor: pointer;
-        display: inline-block;
-        text-decoration: none;
-        padding: 10px 30px;
-        font-weight: bold;
-        text-transform: uppercase;
-        -o-border-radius: 3px;
-        border-radius: 3px;
-    }
-
-    button:disabled,
-    input[type="submit"]:disabled {
-        opacity: .3;
-        cursor: auto;
-    }
-
-    a.link-button {
-        -o-border-radius: 3px;
-        border-radius: 3px;
-    }
-
-    input {
-        font: 14px/21px $fontStack;
-        -webkit-text-size-adjust: none;
-    }
-
-    li {
-        line-height: 24px;
-    }
-
-    .flex-width {
-        text-align: center;
-    }
-
-    .container.flex-width {
-        max-width: 700px;
-        text-align: center;
-    }
-
-    h1:empty,
-    h2:empty,
-    h3:empty,
-    h4:empty,
-    h5:empty,
-    h6:empty,
-    p:empty,
-    div:empty {
-        padding: 0;
-        margin: 0;
-    }
-
-    .long-text {
-        text-align: left;
-        margin-bottom: 40px;
-    }
-
-    .row {
-        margin-bottom: 0px;
-    }
-
-    section,
-    footer {
-        p {
-            line-height: 24px;
-        }
-    }
-
-    footer {
-        padding-top: 60px;
-        padding-bottom: 60px;
-
-        img {
-            height: 35px;
-        }
-    }
-
-    section {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
-    span.required {
-        color: $highlightBackground;
-    }
-
-    .highlighted-section {
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: $highlightAreaHeaderColor;
-        }
-
-        background-color: $highlightBackground;
-        color: $highlightAreaColor;
-
-        a {
-            color: $highlightAreaLinkColor;
-        }
-
-        a:hover {
-            color: $highlightAreaLinkOverColor;
-        }
-
-        a.link-button,
-        button,
-        input[type="submit"] {
-            background-color: $highlightAreaButtonBackground;
-            color: $highlightAreaButtonColor;
-        }
-
-        a.link-button:hover,
-        button:hover,
-        input[type="submit"]:hover {
-            color: $highlightAreaButtonOverColor;
-        }
-
-        .sharelinks {
-            .share-link {
-                margin: 15px 15px 15px 0;
-                display: inline-block;
-
-                a.link-button:hover,
-                button:hover,
-                input[type="submit"]:hover {
-                    color: $white;
-                }
-
-                img {
-                    height: 30px;
-                    display: inline-block;
-                    vertical-align: middle;
-                }
-                span {
-                    font-weight: 400;
-                    padding-left: 5px;
-                }
-            }
-            .share-fb {
-                .link-button {
-                    background-color: $facebook;
-                }
-            }
-            .share-twitter {
-                .link-button {
-                    background-color: $twitter;
-                }
-            }
-        }
-    }
-
-    .main-section {
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: $mainAreaHeaderColor;
-        }
-
-        background: $mainBackground;
-        color: $mainAreaColor;
-
-        a {
-            color: $mainAreaLinkColor;
-        }
-
-        a:hover {
-            color: $mainAreaLinkOverColor;
-        }
-
-        a.link-button,
-        button,
-        input[type="submit"]  {
-            background-color: $mainAreaButtonBackground;
-            color: $mainAreaButtonColor;
-        }
-
-        a.link-button:hover,
-        button:hover,
-        input[type="submit"]:hover {
-            color: $mainAreaButtonOverColor;
-        }
-    }
-
-    .alt-section {
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: $altAreaHeaderColor;
-        }
-
-        background-image: url(../images/background_new.jpg);
-        background-color: $altBackground;
-        background-repeat: no-repeat;
-        color: $altAreaColor;
-
-        a {
-            color: $altAreaLinkColor;
-        }
-
-        a:hover {
-            color: $altAreaLinkOverColor;
-        }
-
-        a.link-button,
-        button,
-        input[type="submit"]  {
-            background-color: $altAreaButtonBackground;
-            color: $altAreaButtonColor;
-        }
-
-        a.link-button:hover,
-        button:hover,
-        input[type="submit"]:hover {
-            color: $altAreaButtonOverColor;
-        }
-    }
-
-    .tertiary-section {
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: $tertiaryAreaHeaderColor;
-        }
-
-        background-image: url(../images/bg_white_new.jpg);
-        background-color: $tertiaryBackground;
-        // background-repeat: no-repeat;
-        color: $tertiaryAreaColor;
-
-        a {
-            color: $tertiaryAreaLinkColor;
-        }
-
-        a:hover {
-            color: $tertiaryAreaLinkOverColor;
-        }
-
-        a.link-button,
-        button,
-        input[type="submit"]  {
-            background-color: $tertiaryAreaButtonBackground;
-            color: $tertiaryAreaButtonColor;
-        }
-
-        a.link-button:hover,
-        button:hover,
-        input[type="submit"]:hover {
-            color: $tertiaryAreaButtonOverColor;
-        }
-    }
-
-    .quaternary-section {
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: $quaternaryAreaHeaderColor;
-        }
-
-        background-color: $quaternaryBackground;
-        // background-repeat: no-repeat;
-        color: $quaternaryAreaColor;
-
-        a {
-            color: $quaternaryAreaLinkColor;
-        }
-
-        a:hover {
-            color: $quaternaryAreaLinkOverColor;
-        }
-
-        a.link-button,
-        button,
-        input[type="submit"]  {
-            background-color: $quaternaryAreaButtonBackground;
-            color: $quaternaryAreaButtonColor;
-        }
-
-        a.link-button:hover,
-        button:hover,
-        input[type="submit"]:hover {
-            color: $quaternaryAreaButtonOverColor;
-        }
-    }
-
-    .subdued-section {
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: $subduedAreaHeaderColor;
-        }
-
-        background-color: $subduedBackground;
-        background-repeat: no-repeat;
-        color: $subduedAreaColor;
-
-        a {
-            color: $subduedAreaLinkColor;
-        }
-
-        a:hover {
-            color: $subduedAreaLinkOverColor;
-        }
-
-        a.link-button,
-        button,
-        input[type="submit"]  {
-            background-color: $subduedAreaButtonBackground;
-            color: $subduedAreaButtonColor;
-        }
-
-        a.link-button:hover,
-        button:hover,
-        input[type="submit"]:hover {
-            color: $subduedAreaButtonOverColor;
-        }
-
-        ul {
-            text-align: left;
-            padding:25px;
-            -o-border-radius: 5px;
-            border-radius: 5px;
-
-            color: $subduedAreaUlColor;
-            background: $subduedAreaUlBackground;
-            a {
-                color: $subduedAreaUlColor;
-            }
-
-            a:hover {
-                color: $subduedAreaUlLinkOverColor;
-            }
-
-            li {
-                list-style: disc outside none;
-                color: $subduedAreaUlColor;
-                margin-bottom: 10px;
-                margin-left: 15px;
-                width: 99%;
-            }
-
-            li:last-child {
-                margin-bottom: 0px;
-            }
-        }
-    }
-
-    a.link-button {
-        display: inline-block;
-        text-decoration: none;
-        padding: 10px 30px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-    .promo-text-container {
-        padding: 30px 0 0px 0;
-    }
-
-    .sponsor-header a,
-    .sponsor-footer a {
-        width: 80px;
-        img {
-            width: 80px;
-        }
-    }
-
-    .legal,
-    .email-server-message {
-        text-align: center;
-    }
-
-    .legal {
-        font-size: 12px;
-    }
-
-    .video-container {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 */
-        height: 0;
-
-        iframe,
-        video,
-        img,
-        p {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    .site-nav,
-    .social {
-        padding-right: 10px;
-        vertical-align: top;
-        * {
-            vertical-align: top;
-        }
-    }
-
-    footer .site-nav {
-        vertical-align: middle;
-        * {
-            vertical-align: middle;
-        }
-    }
-
-    header {
-        width: 100%;
-        position:fixed;
-        opacity: 1;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-
-        ul {
-            margin-bottom: 0px;
-            li {
-                margin-bottom: 0px;
-            }
-        }
-        .nav-header {
-            background-color: $headerBackground;
-            height: 46px;
-            margin-bottom: 0px;
-            position: relative;
-            overflow: auto;
-
-            .site-nav {
-                display: inline-block;
-                height: inherit;
-            }
-
-            .site-nav ul {
-                height: inherit;
-                overflow-x: auto;
-                overflow-y: hidden;
-                white-space: nowrap;
-                width: auto;
-                li {
-                    line-height: 18px;
-                }
-            }
-
-            li {
-                display: inline-block;
-            }
-
-            a {
-                display: inline-block;
-            }
-
-            a.nav-link {
-                color: $headerLinkColor;
-                font-size: 13px;
-                font-weight: 600;
-                text-decoration: none;
-
-                margin-top: 13px;
-                margin-left: 20px;
-            }
-
-            a:hover {
-                color: $headerLinkOverColor;
-            }
-
-            .social {
-                display: inline-block;
-                position: absolute;
-                right: 0;
-
-                span {
-                    color: $headerColor;
-                    display: inline-block;
-                    font-size: 14px;
-                    margin-top: 13px;
-                    margin-right: 20px;
-                }
-
-                a {
-                    color: $headerColor;
-                }
-            }
-        }
-
-        .share-header {
-            background-color: $shareBackground;
-            width: 100%;
-            height: 42px;
-            position: relative;
-            margin-bottom: 0px;
-
-            .share-bar {
-                height: inherit;
-                width: 100%;
-                position: absolute;
-                left: 20px;
-                overflow: hidden;
-
-                >span {
-                    font-weight: 500;
-                    font-size: 13px;
-                    letter-spacing: 2px;
-                    float: left;
-                }
-
-                .share-text {
-                    padding-top: 10px;
-                    margin-right: 20px;
-                }
-
-                .share-hashtag {
-                    color: $shareColor;
-                }
-
-                .header-subscription-container {
-                    padding-top: 0px;
-                    border-left: solid 1px $headerBackground;
-                    padding-left: 20px;
-                    height: 40px;
-                    vertical-align: top;
-
-                    form {
-                        display: inline-block;
-                        input {
-                            margin-left: 10px;
-                            margin-top: 7px;
-                            display: inline-block;
-                            height: 15px;
-                        }
-                    }
-
-                }
-
-
-
-            }
-
-
-        }
-    }
-
-    footer {
-        .nav-links {
-            display: inline-block;
-            a.nav-link {
-                padding-right: 10px;
-                border-right: solid 1px $headerLinkColor;
-                padding-left: 5px;
-                white-space: nowrap;
-            }
-            a.nav-link.last {
-                border-right: 0;
-            }
-        }
-    }
-
-    #promo-video {
-        text-align: center;
-        width: 100%;
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin-top: 40px;
-        }
-
-        img {
-            height: 400px;
-        }
-
-        .video-container {
-            img {
-                height: initial;
-            }
-        }
-
-        a {
-            display: inline-block;
-            vertical-align: top;
-        }
-
-        .tdc-logo {
-            width: 80%;
-        }
-
-        .sponsors-link {
-            width: 25%;
-        }
-
-        p {
-            font-size: 20px;
-            line-height: 30px;
-        }
-
-        .hero {
-            a,
-            img {
-                display: block;
-                margin: 0 auto;
-                height: inherit;
-            }
-        }
-    }
-
-    #intro-text {
-
-        p {
-            font-size: 26px;
-            font-weight: bold;
-            line-height: 30px;
-        }
-    }
-
-    .newsletter-signup {
-
-        p {
-            line-height: 24px;
-        }
-
-        form {
-            margin-bottom: 0;
-            text-align: center;
-            input {
-                display: inline-block;
-                padding: 9px 30px;
-            }
-            label {
-                font-weight: 400;
-                padding: 20px 10px;
-                display: inline-block;
-            }
-        }
-
-        button,
-        input[type="submit"] {
-            padding: 10px 15px;
-        }
-
-        .email-server-message {
-            display: none;
-            font-size: 16px;
-            padding:10px;
-        }
-    }
-
-    #how-to-enter {
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            text-align: center;
-        }
-
-        ul {
-            text-align: left;
-            padding:25px;
-            -o-border-radius: 5px;
-            border-radius: 5px;
-
-            background: $mainAreaUlBackground;
-            a {
-                color: $mainAreaUlColor;
-            }
-
-            a:hover {
-                color: $mainAreaUlLinkOverColor;
-            }
-
-            li {
-                list-style: disc outside none;
-                color: $mainAreaUlColor;
-                margin-bottom: 10px;
-                margin-left: 15px;
-                width: 99%;
-            }
-
-            li:last-child {
-                margin-bottom: 0px;
-            }
-        }
-    }
-
-    #judges {
-        text-align: center;
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin-bottom: 0px;
-        }
-
-        a,
-        a:visited {
-            text-decoration: none;
-        }
-
-        .judge-box {
-            display: inline-block;
-            vertical-align: top;
-            margin-top: 40px;
-            width: 250px;
-            text-align: center;
-            cursor: pointer;
-            .judge-photo {
-                width: 120px;
-                height: 120px;
-                position: relative;
-                overflow: hidden;
-                left: 55px;
-                -o-border-radius: 50%;
-                border-radius: 50%;
-                border: solid 1px $mainAreaBorder;
-                img {
-                    height: 100%;
-                    width: auto;
-                    position: relative;
-                }
-            }
-
-            .judge-name {
-                font-family: $altFontStack;
-                font-size: 21px;
-                padding: 10px 0 10px 0;
-            }
-            .judge-description {
-                padding: 0 20px 0 20px;
-                color: $mainAreaColor;
-            }
-        }
-
-    }
-
-    #blog-feed {
-        background: $white;
-        .description {
-            position: relative;
-            top: -30px;
-        }
-        .blog-container {
-            text-align: left;
-            .tumblr-more-container {
-                text-align: center;
-            }
-            article {
-                padding-bottom: 60px;
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-                video {
-                    width: 100%;
-                }
-                i {
-                    font-style: italic;
-                    font-size: 12px;
-                }
-                h2 {
-                    font-size: 20px;
-                }
-                h5 {
-                    margin-bottom: 30px;
-                }
-            }
-            article:after {
-                    content: "";
-                    display: block;
-                    height: 1px;
-                    width: 100%;
-                    margin-top: 60px;
-                    background: $mainAreaBorder;
-            }
-            article:first-child:before {
-                    content: "";
-                    display: block;
-                    height: 1px;
-                    width: 100%;
-                    margin-bottom: 40px;
-                    background: $mainAreaBorder;
-            }
-        }
-    }
-
-    #entry-validation-text {
-        font: 16px/21px $fontStack;
-    }
-
-    #entry-submission-form {
-        fieldset,
-        input {
-            margin: 0px;
-        }
-
-        input[type="text"],
-        input[type="email"] {
-            padding: 7px 4px;
-            box-sizing: border-box;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        textarea,
-        input[type="text"],
-        input[type="email"] {
-            width: 100%;
-        }
-
-        legend {
-            margin-bottom: 5px;
-        }
-
-        .description {
-            font-size: 12px;
-            color: $mainAreaSubduedText;
-        }
-
-        .fieldgroup-field {
-            margin: auto;
-            padding: 20px 0px;
-            margin-left: 60px;
-            margin-right: 60px;
-        }
-        .fieldgroup-field.first {
-            padding: 0;
-            margin: inherit;
-            width: 100%;
-            margin-left: 0px;
-        }
-        .fieldgroup-field.last {
-            padding-bottom: 40px;
-        }
-
-        .social-radio-label {
-            margin-right: 10px;
-        }
-
-        .primary-selected-label {
-            display: inline-block;
-            padding: 5px;
-            background: $highlightBackground;
-            color: $highlightAreaHeaderColor;
-            -o-border-radius: 3px;
-            border-radius: 3px;
-        }
-
-        .station-picker-label {
-            display: block;
-        }
-
-        .placeholder-container {
-            .placeholder-msg {
-                font-size: 12px;
-            }
-
-            .placeholder-video {
-                background-color: $mainAreaSubduedText;
-                position: relative;
-                .video-preview-text {
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translateY(-50%) translateX(-50%);
-                    -webkit-transform: translateY(-50%) translateX(-50%);
-                    -o-transform: translateY(-50%) translateX(-50%);
-                    color: $mainAreaButtonColor;
-                }
-            }
-        }
-
-        .fieldgroup.how-to-reach {
-
-            .info {
-                margin-left: 60px;
-                padding: 20px 0 0 0;
-            }
-
-            .description {
-                display: block;
-                margin-bottom: 10px;
-            }
-
-            .fieldgroup-field {
-                vertical-align: top;
-            }
-
-            .fieldgroup-field.even {
-                display: inline-block;
-                margin-right: 30px;
-                width: 38%;
-                textarea,
-                input[type="text"],
-                input[type="email"] {
-                    width: 100%;
-                }
-            }
-            .fieldgroup-field.odd {
-                display: inline-block;
-                width: 39%;
-                margin-left: 0px;
-                textarea,
-                input[type="text"],
-                input[type="email"] {
-                    width: 100%;
-                }
-            }
-            .fieldgroup-field.first {
-                padding: 0;
-                margin: inherit;
-                width: 100%;
-            }
-            .fieldgroup-field.last {
-                display: block;
-                width: 103%;
-                textarea,
-                input[type="text"],
-                input[type="email"] {
-                    width: 62%;
-                }
-            }
-
-            button {
-                line-height: 17px;
-            }
-
-            #station-search-result-area {
-                .station-option {
-                    position: relative;
-                    margin: 15px 0;
-                    line-height: 30px;
-                    border-bottom: solid 1px $mainAreaCheckboxBackground;
-                    width: 80%;
-                    padding: 10px 0;
-                    text-align: center;
-
-                }
-                .station-option:last-child {
-                    border-bottom: none;
-                }
-                .station-option * {
-                    display: inline-block;
-                    position: relative;
-                    // left: 50%;
-                    // transform: translateX(-50%);
-                    width: 200px;
-                    text-align: center;
-                }
-                .station-option .station-image-content {
-                    vertical-align: middle;
-                    max-width: 150px;
-                    .station-image {
-                        width: initial;
-                    }
-                }
-                .station-option .station-title {
-                    font-family: $altFontStack;
-                    font-size: 14px;
-                    vertical-align: middle;
-
-                }
-                .station-option .station-name {
-                    font-family: $altFontStack;
-                    padding-top: 5px;
-                    font-size: 22px;
-                    vertical-align: middle;
-
-                }
-                .station-select {
-                    vertical-align: middle;
-                    height: 100px;
-
-                    // top: 50%;
-                    // transform: translateY(-50%);
-                    // margin-top: 10px;
-                }
-                .station-select-button {
-                    vertical-align: middle;
-                    width: 60px;
-                    line-height: 12px;
-                    padding: 10px 10px;
-
-                }
-            }
-        }
-
-        .fieldgroup.about-group {
-            .middleColumn.fieldgroup div:nth-child(2) {
-                padding-bottom: 0px !important;
-            }
-            .middleColumn.fieldgroup div:nth-child(3) {
-                padding-top: 0px !important;
-            }
-
-            #Form_MainEntryForm_GroupGenre {
-                margin-top: 5px;
-                li {
-                    width: 25%;
-                    margin-bottom: 15px;
-                }
-            }
-
-            #parsley-id-multiple-GroupGenre {
-                display: block;
-                width: 100%;
-                clear: both;
-            }
-
-            input[name="isPrimarySocial"] {
-                margin-top: 20px;
-                margin-bottom: 10px;
-            }
-
-            input[name^="Social"] {
-                margin-top: 5px;
-            }
-
-            .description {
-                color: $mainAreaColor;
-            }
-
-            .social-url-container {
-                .social-input-wrapper {
-
-                    box-sizing: border-box;
-                    width:100%;
-                    border: solid 1px $mainAreaCheckboxBackground;
-                    border-radius: 2px;
-                    span {
-                        margin-left: 10px;
-                        position: absolute;
-                        margin: 10px;
-                    }
-                    input {
-                        width: 100%;
-                        border: none;
-                        margin-top: 3px;
-                    }
-                    input[name="SocialTwitter"] {
-                        padding-left: 27px;
-                    }
-                    input[name="SocialFacebook"] {
-                        padding-left: 125px;
-                    }
-                    input:active,
-                    input:focus {
-                        border: none;
-                        outline: none;
-                        box-shadow: none;
-                    }
-                }
-
-                .selected-social {
-                    border: solid 1px $mainAreaCheckboxCheckedBackground;
-                }
-            }
-        }
-
-        .fieldgroup.about-entry {
-            .placeholder-container {
-                margin-top: 10px;
-            }
-        }
-
-        .fieldgroup.the-rules {
-            .description {
-                display: inline-block;
-                font-size: 14px;
-                font-weight: 700;
-                margin-top: 5px;
-                color: $mainAreaColor;
-            }
-        }
-    }
-
-    #entry-validation-form {
-        li.valYes {
-            clear: left;
-        }
-
-        .fieldgroup-field {
-            overflow: auto;
-            zoom: 1;
-            border-bottom: solid 1px $mainAreaBorder;
-            fieldset {
-                margin-bottom: 0px;
-                legend {
-                    margin-bottom: 30px;
-                }
-            }
-        }
-
-        .fieldgroup-field.first {
-            border-bottom: none;
-        }
-
-        .fieldgroup-field.last {
-            border-bottom: none;
-        }
-
-        .optionset {
-            li {
-                border: solid 1px $mainAreaBorder;
-                -o-border-radius: 3px;
-                border-radius: 3px;
-                width: 100px;
-            }
-        }
-
-        /* hide input */
-        input[type="radio"]:empty,
-        input[type="checkbox"]:empty {
-            margin-left: -9999px;
-        }
-
-        /* style label */
-        input[type="radio"]:empty ~ label,
-        input[type="checkbox"]:empty ~ label {
-            position: relative;
-            float: left;
-            line-height: 2.5em;
-            text-indent: 2.6em;
-            cursor: pointer;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-
-            width: 100%;
-        }
-
-        .valNo input[type="radio"]:empty ~ label,
-        .valNo input[type="checkbox"]:empty ~ label {
-            text-indent: 2.9em;
-        }
-
-        input[type="radio"]:empty ~ label:after,
-        input[type="checkbox"]:empty ~ label:after {
-            position: absolute;
-            display: block;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            content: '';
-            width: 2.5em;
-            border-radius: 3px 0 0 3px;
-        }
-
-        /* toggle hover */
-
-        input[type="radio"]:hover:not(:checked) ~ label,
-        input[type="checkbox"]:hover:not(:checked) ~ label {
-            color: $mainAreaCheckboxCheckedColor;
-            background-color: $mainAreaCheckboxCheckedBackground;
-        }
-
-        /* toggle on */
-
-        input[type="radio"]:checked ~ label,
-        input[type="checkbox"]:checked ~ label {
-            color: $mainAreaCheckboxCheckedColor;
-            background-color: $mainAreaCheckboxCheckedBackground;
-        }
-
-        .valYes input[type="radio"]:checked ~ label,
-        .valYes input[type="checkbox"]:checked ~ label {
-            text-indent: 2.0em;
-        }
-
-        .valYes input[type="radio"]:checked ~ label:after,
-        .valYes input[type="checkbox"]:checked ~ label:after {
-            content:'\2714';
-            text-indent: -0.2em;
-        }
-    }
-
-    .entry-form {
-        text-align: left;
-
-        form {
-            text-align: center;
-        }
-
-        h3 {
-            margin-bottom: 20px;
-        }
-
-        input,
-        label {
-            display: inline-block;
-        }
-
-        fieldset {
-            text-align: left;
-        }
-
-        label,
-        legend {
-            font: inherit;
-            font-weight: 400;
-        }
-
-        li {
-            float: left;
-            margin: 0 25px 0 0;
-        }
-
-        #validation-messages {
-            display: none;
-        }
-
-        .fieldgroup-field {
-            padding: 30px 0px;
-            margin: 0px 60px;
-        }
-
-        .fieldgroup-field.first {
-            margin: 0;
-            padding: 0;
-
-            h2 {
-                margin: 0;
-            }
-        }
-
-        .validation-msg {
-            color: $mainAreaLinkColor;
-            display: inline-block;
-            padding: 0 5px;
-            margin: 30px 0 0px 0;
-            text-align: left;
-            float: left;
-            clear: both;
-            border-left: solid 5px $mainAreaLinkColor;
-        }
-
-        .field.fieldgroup {
-            margin-bottom: 30px;
-            background-color: $mainAreaFormBackground;
-        }
-
-        .fieldgroup-field {
-
-            h2 {
-                background: $mainAreaLegendBackground;
-                color: $mainAreaButtonColor;
-                display: block;
-                padding: 10px 30px 10px 30px;
-                position: relative;
-                font-size: 20px;
-                font-weight: 400;
-                text-align: center;
-            }
-        }
-
-        .form-minor-section {
-            legend {
-                color: $mainAreaHeaderColor;
-            }
-        }
-    }
-
-    #tell-your-friends {
-        .sharelinks {
-            .share-link {
-                margin: 15px 15px 15px 0;
-                display: inline-block;
-
-                a.link-button:hover,
-                button:hover,
-                input[type="submit"]:hover {
-                    color: $white;
-                }
-
-                img {
-                    height: 30px;
-                    display: inline-block;
-                    vertical-align: middle;
-                }
-                span {
-                    font-weight: 400;
-                    padding-left: 5px;
-                }
-            }
-            .share-fb {
-                .link-button {
-                    background-color: $facebook;
-                }
-            }
-            .share-twitter {
-                .link-button {
-                    background-color: $twitter;
-                }
-            }
-        }
-    }
-
-    #browse-entries {
-        img {
-            width: 30%;
-        }
-
-        .random-video-frame {
-            background-image: url(../images/browser_component_frame.png);
-            height: 55px;
-            position: relative;
-            padding-bottom: 56.25%;
-
-            .video-container {
-                height: 71%;
-                width: 81%;
-                position: absolute;
-                top: 32px;
-                left: 32px;
-                padding-bottom: 0px;
-            }
-        }
-
-        .section-link-button-container {
-            margin-top: 30px;
-        }
-    }
-
-    #peoples-choice-vote {
-
-        .vote-image-frame {
-
-
-            .video-container {
-                img {
-                    height: auto;
-                }
-
-            }
-        }
-
-        .section-link-button-container {
-            margin-top: 0px;
-        }
-    }
-}
-
-body.page.checklist-page {
-    .newsletter-signup {
-        background-color: $mainBackground;
-        .container {
-            max-width: 660px;
-            background-color: $highlightBackground;
-            padding: 40px 20px;
-        }
-    }
-}
-
-
-body.page.entry {
-    #mainstage {
-        background-image: none;
-    }
-}
-
-body.page.update-page {
-    ul li {
-        float: none;
-        label {
-            color: $mainAreaColor;
-            font-weight: 400;
-            margin-top: 0px;
-        }
-    }
-
-    label {
-        color: $mainAreaUlColor;
-        font-weight: bold;
-        margin-top: 30px
-    }
-}
-
-
-/**
- * Begin media queries
- */
-
-@media only screen and (max-width: 767px) {
-    body.page {
-        header {
-            position:inherit;
-            top: inherit;
-            left: inherit;
-
-            .nav-header {
-
-                .social {
-                    display: none;
-                }
-            }
-
-            .share-header {
-
-                position: inherit;
-                height: inherit;
-                .share-bar {
-                    position: inherit;
-                    left: 0px;
-                    >span {
-
-                        display: block;
-                        text-align: center;
-                        height: 42px;
-
-                        a {
-                            overflow: hidden;
-                        }
-                    }
-
-                    .share-text {
-                        display: none;
-                    }
-
-                    .share-twitter {
-                        width: 50%;
-                        text-align: center;
-                        a {
-                            width: 153px;
-                            display: block;
-                            margin-left: 20px;
-                            img {
-                                margin-left: -50px;
-                            }
-                        }
-                    }
-
-                    .header-subscription-container {
-                        border-left: none;
-                        border-top: solid 1px $headerBackground;
-                        padding-left: 0px;
-                    }
-                }
-            }
-        }
-
-        #promo-video {
-
-            .tdc-logo {
-                width: 100%;
-                height: 150px;
-            }
-
-            .sponsors-link {
-                width: 40%;
-            }
-
-            .container {
-                width: 100%;
-            }
-        }
-
-        main {
-            margin-top: 0px;
-        }
-
-        #entry-submission-form {
-            fieldset,
-            input {
-                margin: 0px;
-            }
-
-            textarea,
-            input[type="text"],
-            input[type="email"] {
-                width: 100%;
-            }
-
-            legend {
-                margin-bottom: 5px;
-            }
-
-            .description {
-                font-size: 12px;
-                color: $mainAreaSubduedText;
-            }
-
-            .fieldgroup-field {
-                margin: auto;
-                width: 75%;
-                display: block;
-            }
-
-            .fieldgroup.how-to-reach {
-
-                .fieldgroup-field.even {
-                    display: block;
-                    width: 75%;
-                    margin: auto;
-                }
-                .fieldgroup-field.odd {
-                    display: block;
-                    width: 75%;
-                    margin: auto;
-                }
-                .fieldgroup-field.first {
-                    margin: 0;
-                    padding: inherit;
-                    width: 100%;
-                }
-                .fieldgroup-field.last {
-                    textarea,
-                    input[type="text"],
-                    input[type="email"] {
-                        width: 100%;
-                    }
-                }
-                #station-search-result-area {
-                    .station-option {
-                        width: 100%;
-                    }
-                    .station-select {
-                        height: 50px;
-                    }
-                }
-                #station-search-button {
-                    width: 100%;
-                    margin-top: 5px;
-                }
-            }
-
-            .fieldgroup.about-group {
-                #Form_MainEntryForm_GroupGenre {
-                    li {
-                        width: 50%;
-                    }
-                }
-            }
-        }
-
-        #browse-entries {
-            img {
-                width: 50%;
-            }
-            .random-video-frame {
-                background-image: none;
-                height: 0;
-                .video-container {
-                    height: 0;
-                    width: 100%;
-                    position: absolute;
-                    top: 0px;
-                    left: 0px;
-                    padding-bottom: 56.25%;
-                }
-            }
-        }
-
-    }
-
-    body.page.checklist-page {
-        .newsletter-signup {
-            .container {
-                width: 380px;
-            }
-        }
-    }
-}
-
-/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {
-    body.page {
-
-        p {
-            font-size: 16px;
-        }
-
-        li {
-            font-size: 16px;
-        }
-
-        footer {
-            .nav-links {
-                display: block;
-            }
-        }
-
-        #promo-video {
-
-            .tdc-logo {
-                width: 100%;
-            }
-        }
-
-        .newsletter-signup {
-            input {
-                width: 108px;
-            }
-        }
-
-        #entry-validation-form {
-
-            .optionset {
-                li {
-                    margin: 0 0 15px 0;
-                    width: 175px;
-                }
-
-                li:last-child {
-                    margin-bottom: 0px;
-                }
-            }
-
-            /* style label */
-            .valYes input[type="radio"]:empty ~ label,
-            .valYes input[type="checkbox"]:empty ~ label {
-                text-indent: 4.4em;
-            }
-
-            .valNo input[type="radio"]:empty ~ label,
-            .valNo input[type="checkbox"]:empty ~ label {
-                text-indent: 4.6em;
-            }
-
-            /* toggle on */
-            .valYes input[type="radio"]:checked ~ label,
-            .valYes input[type="checkbox"]:checked ~ label {
-                text-indent: 3.9em;
-            }
-
-            .valYes input[type="radio"]:checked ~ label:after,
-            .valYes input[type="checkbox"]:checked ~ label:after {
-                content:'\2714';
-                text-indent: -2.1em;
-            }
-        }
-
-        #entry-submission-form {
-            li {
-                font-size: 14px;
-            }
-
-            .about-group {
-                label {
-                    display: inline;
-                }
-            }
-        }
-
-        #browse-entries {
-            img {
-                width: 50%;
-            }
-        }
-
-    }
-
-    body.page.checklist-page {
-        background: $mainBackground;
-        section.newsletter-signup {
-            width: 300px;
-            margin: 0 auto;
-
-            .container {
-                width: auto;
-            }
-        }
-    }
-
-}
+// body.page {
+
+
+//     main {
+//         margin-top: 88px;
+//     }
+
+//     h1,
+//     h2,
+//     h3,
+//     h4,
+//     h5,
+//     h6 {
+//         color: $white;
+//         margin-bottom: 40px;
+//         font-weight: bold;
+//         font-family: $fontStack;
+//         text-transform: lowercase;
+//     }
+
+//     strong {
+//         color: inherit;
+//     }
+
+//     font: 14px/21px $fontStack;
+//     -webkit-text-size-adjust: none;
+
+//     select {
+//         font: 13px $fontStack;
+//     }
+
+//     button,
+//     input[type="submit"] {
+//         border: 0;
+//         font-size: 100%;
+//         font: inherit;
+//         margin: 0;
+//         cursor: pointer;
+//         display: inline-block;
+//         text-decoration: none;
+//         padding: 10px 30px;
+//         font-weight: bold;
+//         text-transform: uppercase;
+//         -o-border-radius: 3px;
+//         border-radius: 3px;
+//     }
+
+//     button:disabled,
+//     input[type="submit"]:disabled {
+//         opacity: .3;
+//         cursor: auto;
+//     }
+
+//     a.link-button {
+//         -o-border-radius: 3px;
+//         border-radius: 3px;
+//     }
+
+//     input {
+//         font: 14px/21px $fontStack;
+//         -webkit-text-size-adjust: none;
+//     }
+
+//     li {
+//         line-height: 24px;
+//     }
+
+//     .flex-width {
+//         text-align: center;
+//     }
+
+//     .container.flex-width {
+//         max-width: 700px;
+//         text-align: center;
+//     }
+
+//     h1:empty,
+//     h2:empty,
+//     h3:empty,
+//     h4:empty,
+//     h5:empty,
+//     h6:empty,
+//     p:empty,
+//     div:empty {
+//         padding: 0;
+//         margin: 0;
+//     }
+
+//     .long-text {
+//         text-align: left;
+//         margin-bottom: 40px;
+//     }
+
+//     .row {
+//         margin-bottom: 0px;
+//     }
+
+//     section,
+//     footer {
+//         p {
+//             line-height: 24px;
+//         }
+//     }
+
+//     footer {
+//         padding-top: 60px;
+//         padding-bottom: 60px;
+
+//         img {
+//             height: 35px;
+//         }
+//     }
+
+//     section {
+//         padding-top: 40px;
+//         padding-bottom: 40px;
+//     }
+
+//     span.required {
+//         color: $highlightBackground;
+//     }
+
+//     .highlighted-section {
+
+//         h1,
+//         h2,
+//         h3,
+//         h4,
+//         h5,
+//         h6 {
+//             color: $highlightAreaHeaderColor;
+//         }
+
+//         background-color: $highlightBackground;
+//         color: $highlightAreaColor;
+
+//         a {
+//             color: $highlightAreaLinkColor;
+//         }
+
+//         a:hover {
+//             color: $highlightAreaLinkOverColor;
+//         }
+
+//         a.link-button,
+//         button,
+//         input[type="submit"] {
+//             background-color: $highlightAreaButtonBackground;
+//             color: $highlightAreaButtonColor;
+//         }
+
+//         a.link-button:hover,
+//         button:hover,
+//         input[type="submit"]:hover {
+//             color: $highlightAreaButtonOverColor;
+//         }
+
+//         .sharelinks {
+//             .share-link {
+//                 margin: 15px 15px 15px 0;
+//                 display: inline-block;
+
+//                 a.link-button:hover,
+//                 button:hover,
+//                 input[type="submit"]:hover {
+//                     color: $white;
+//                 }
+
+//                 img {
+//                     height: 30px;
+//                     display: inline-block;
+//                     vertical-align: middle;
+//                 }
+//                 span {
+//                     font-weight: 400;
+//                     padding-left: 5px;
+//                 }
+//             }
+//             .share-fb {
+//                 .link-button {
+//                     background-color: $facebook;
+//                 }
+//             }
+//             .share-twitter {
+//                 .link-button {
+//                     background-color: $twitter;
+//                 }
+//             }
+//         }
+//     }
+
+//     .main-section {
+
+//         h1,
+//         h2,
+//         h3,
+//         h4,
+//         h5,
+//         h6 {
+//             color: $mainAreaHeaderColor;
+//         }
+
+//         background: $mainBackground;
+//         color: $mainAreaColor;
+
+//         a {
+//             color: $mainAreaLinkColor;
+//         }
+
+//         a:hover {
+//             color: $mainAreaLinkOverColor;
+//         }
+
+//         a.link-button,
+//         button,
+//         input[type="submit"]  {
+//             background-color: $mainAreaButtonBackground;
+//             color: $mainAreaButtonColor;
+//         }
+
+//         a.link-button:hover,
+//         button:hover,
+//         input[type="submit"]:hover {
+//             color: $mainAreaButtonOverColor;
+//         }
+//     }
+
+//     .alt-section {
+
+//         h1,
+//         h2,
+//         h3,
+//         h4,
+//         h5,
+//         h6 {
+//             color: $altAreaHeaderColor;
+//         }
+
+//         background-image: url(../images/background_new.jpg);
+//         background-color: $altBackground;
+//         background-repeat: no-repeat;
+//         color: $altAreaColor;
+
+//         a {
+//             color: $altAreaLinkColor;
+//         }
+
+//         a:hover {
+//             color: $altAreaLinkOverColor;
+//         }
+
+//         a.link-button,
+//         button,
+//         input[type="submit"]  {
+//             background-color: $altAreaButtonBackground;
+//             color: $altAreaButtonColor;
+//         }
+
+//         a.link-button:hover,
+//         button:hover,
+//         input[type="submit"]:hover {
+//             color: $altAreaButtonOverColor;
+//         }
+//     }
+
+//     .tertiary-section {
+
+//         h1,
+//         h2,
+//         h3,
+//         h4,
+//         h5,
+//         h6 {
+//             color: $tertiaryAreaHeaderColor;
+//         }
+
+//         background-image: url(../images/bg_white_new.jpg);
+//         background-color: $tertiaryBackground;
+//         // background-repeat: no-repeat;
+//         color: $tertiaryAreaColor;
+
+//         a {
+//             color: $tertiaryAreaLinkColor;
+//         }
+
+//         a:hover {
+//             color: $tertiaryAreaLinkOverColor;
+//         }
+
+//         a.link-button,
+//         button,
+//         input[type="submit"]  {
+//             background-color: $tertiaryAreaButtonBackground;
+//             color: $tertiaryAreaButtonColor;
+//         }
+
+//         a.link-button:hover,
+//         button:hover,
+//         input[type="submit"]:hover {
+//             color: $tertiaryAreaButtonOverColor;
+//         }
+//     }
+
+//     .quaternary-section {
+
+//         h1,
+//         h2,
+//         h3,
+//         h4,
+//         h5,
+//         h6 {
+//             color: $quaternaryAreaHeaderColor;
+//         }
+
+//         background-color: $quaternaryBackground;
+//         // background-repeat: no-repeat;
+//         color: $quaternaryAreaColor;
+
+//         a {
+//             color: $quaternaryAreaLinkColor;
+//         }
+
+//         a:hover {
+//             color: $quaternaryAreaLinkOverColor;
+//         }
+
+//         a.link-button,
+//         button,
+//         input[type="submit"]  {
+//             background-color: $quaternaryAreaButtonBackground;
+//             color: $quaternaryAreaButtonColor;
+//         }
+
+//         a.link-button:hover,
+//         button:hover,
+//         input[type="submit"]:hover {
+//             color: $quaternaryAreaButtonOverColor;
+//         }
+//     }
+
+//     .subdued-section {
+
+//         h1,
+//         h2,
+//         h3,
+//         h4,
+//         h5,
+//         h6 {
+//             color: $subduedAreaHeaderColor;
+//         }
+
+//         background-color: $subduedBackground;
+//         background-repeat: no-repeat;
+//         color: $subduedAreaColor;
+
+//         a {
+//             color: $subduedAreaLinkColor;
+//         }
+
+//         a:hover {
+//             color: $subduedAreaLinkOverColor;
+//         }
+
+//         a.link-button,
+//         button,
+//         input[type="submit"]  {
+//             background-color: $subduedAreaButtonBackground;
+//             color: $subduedAreaButtonColor;
+//         }
+
+//         a.link-button:hover,
+//         button:hover,
+//         input[type="submit"]:hover {
+//             color: $subduedAreaButtonOverColor;
+//         }
+
+//         ul {
+//             text-align: left;
+//             padding:25px;
+//             -o-border-radius: 5px;
+//             border-radius: 5px;
+
+//             color: $subduedAreaUlColor;
+//             background: $subduedAreaUlBackground;
+//             a {
+//                 color: $subduedAreaUlColor;
+//             }
+
+//             a:hover {
+//                 color: $subduedAreaUlLinkOverColor;
+//             }
+
+//             li {
+//                 list-style: disc outside none;
+//                 color: $subduedAreaUlColor;
+//                 margin-bottom: 10px;
+//                 margin-left: 15px;
+//                 width: 99%;
+//             }
+
+//             li:last-child {
+//                 margin-bottom: 0px;
+//             }
+//         }
+//     }
+
+//     a.link-button {
+//         display: inline-block;
+//         text-decoration: none;
+//         padding: 10px 30px;
+//         font-weight: bold;
+//         text-transform: uppercase;
+//     }
+
+//     .promo-text-container {
+//         padding: 30px 0 0px 0;
+//     }
+
+//     .sponsor-header a,
+//     .sponsor-footer a {
+//         width: 80px;
+//         img {
+//             width: 80px;
+//         }
+//     }
+
+//     .legal,
+//     .email-server-message {
+//         text-align: center;
+//     }
+
+//     .legal {
+//         font-size: 12px;
+//     }
+
+//     .video-container {
+//         position: relative;
+//         padding-bottom: 56.25%; /* 16:9 */
+//         height: 0;
+
+//         iframe,
+//         video,
+//         img,
+//         p {
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             width: 100%;
+//             height: 100%;
+//         }
+//     }
+
+//     .site-nav,
+//     .social {
+//         padding-right: 10px;
+//         vertical-align: top;
+//         * {
+//             vertical-align: top;
+//         }
+//     }
+
+//     footer .site-nav {
+//         vertical-align: middle;
+//         * {
+//             vertical-align: middle;
+//         }
+//     }
+
+//     header {
+//         width: 100%;
+//         position:fixed;
+//         opacity: 1;
+//         top: 0;
+//         left: 0;
+//         z-index: 9999;
+
+//         ul {
+//             margin-bottom: 0px;
+//             li {
+//                 margin-bottom: 0px;
+//             }
+//         }
+//         .nav-header {
+//             background-color: $headerBackground;
+//             height: 46px;
+//             margin-bottom: 0px;
+//             position: relative;
+//             overflow: auto;
+
+//             .site-nav {
+//                 display: inline-block;
+//                 height: inherit;
+//             }
+
+//             .site-nav ul {
+//                 height: inherit;
+//                 overflow-x: auto;
+//                 overflow-y: hidden;
+//                 white-space: nowrap;
+//                 width: auto;
+//                 li {
+//                     line-height: 18px;
+//                 }
+//             }
+
+//             li {
+//                 display: inline-block;
+//             }
+
+//             a {
+//                 display: inline-block;
+//             }
+
+//             a.nav-link {
+//                 color: $headerLinkColor;
+//                 font-size: 13px;
+//                 font-weight: 600;
+//                 text-decoration: none;
+
+//                 margin-top: 13px;
+//                 margin-left: 20px;
+//             }
+
+//             a:hover {
+//                 color: $headerLinkOverColor;
+//             }
+
+//             .social {
+//                 display: inline-block;
+//                 position: absolute;
+//                 right: 0;
+
+//                 span {
+//                     color: $headerColor;
+//                     display: inline-block;
+//                     font-size: 14px;
+//                     margin-top: 13px;
+//                     margin-right: 20px;
+//                 }
+
+//                 a {
+//                     color: $headerColor;
+//                 }
+//             }
+//         }
+
+//         .share-header {
+//             background-color: $shareBackground;
+//             width: 100%;
+//             height: 42px;
+//             position: relative;
+//             margin-bottom: 0px;
+
+//             .share-bar {
+//                 height: inherit;
+//                 width: 100%;
+//                 position: absolute;
+//                 left: 20px;
+//                 overflow: hidden;
+
+//                 >span {
+//                     font-weight: 500;
+//                     font-size: 13px;
+//                     letter-spacing: 2px;
+//                     float: left;
+//                 }
+
+//                 .share-text {
+//                     padding-top: 10px;
+//                     margin-right: 20px;
+//                 }
+
+//                 .share-hashtag {
+//                     color: $shareColor;
+//                 }
+
+//                 .header-subscription-container {
+//                     padding-top: 0px;
+//                     border-left: solid 1px $headerBackground;
+//                     padding-left: 20px;
+//                     height: 40px;
+//                     vertical-align: top;
+
+//                     form {
+//                         display: inline-block;
+//                         input {
+//                             margin-left: 10px;
+//                             margin-top: 7px;
+//                             display: inline-block;
+//                             height: 15px;
+//                         }
+//                     }
+
+//                 }
+
+
+
+//             }
+
+
+//         }
+//     }
+
+//     footer {
+//         .nav-links {
+//             display: inline-block;
+//             a.nav-link {
+//                 padding-right: 10px;
+//                 border-right: solid 1px $headerLinkColor;
+//                 padding-left: 5px;
+//                 white-space: nowrap;
+//             }
+//             a.nav-link.last {
+//                 border-right: 0;
+//             }
+//         }
+//     }
+
+//     #promo-video {
+//         text-align: center;
+//         width: 100%;
+//         h1,
+//         h2,
+//         h3,
+//         h4,
+//         h5,
+//         h6 {
+//             margin-top: 40px;
+//         }
+
+//         img {
+//             height: 400px;
+//         }
+
+//         .video-container {
+//             img {
+//                 height: initial;
+//             }
+//         }
+
+//         a {
+//             display: inline-block;
+//             vertical-align: top;
+//         }
+
+//         .tdc-logo {
+//             width: 80%;
+//         }
+
+//         .sponsors-link {
+//             width: 25%;
+//         }
+
+//         p {
+//             font-size: 20px;
+//             line-height: 30px;
+//         }
+
+//         .hero {
+//             a,
+//             img {
+//                 display: block;
+//                 margin: 0 auto;
+//                 height: inherit;
+//             }
+//         }
+//     }
+
+//     #intro-text {
+
+//         p {
+//             font-size: 26px;
+//             font-weight: bold;
+//             line-height: 30px;
+//         }
+//     }
+
+//     .newsletter-signup {
+
+//         p {
+//             line-height: 24px;
+//         }
+
+//         form {
+//             margin-bottom: 0;
+//             text-align: center;
+//             input {
+//                 display: inline-block;
+//                 padding: 9px 30px;
+//             }
+//             label {
+//                 font-weight: 400;
+//                 padding: 20px 10px;
+//                 display: inline-block;
+//             }
+//         }
+
+//         button,
+//         input[type="submit"] {
+//             padding: 10px 15px;
+//         }
+
+//         .email-server-message {
+//             display: none;
+//             font-size: 16px;
+//             padding:10px;
+//         }
+//     }
+
+//     #how-to-enter {
+
+//         h1,
+//         h2,
+//         h3,
+//         h4,
+//         h5,
+//         h6 {
+//             text-align: center;
+//         }
+
+//         ul {
+//             text-align: left;
+//             padding:25px;
+//             -o-border-radius: 5px;
+//             border-radius: 5px;
+
+//             background: $mainAreaUlBackground;
+//             a {
+//                 color: $mainAreaUlColor;
+//             }
+
+//             a:hover {
+//                 color: $mainAreaUlLinkOverColor;
+//             }
+
+//             li {
+//                 list-style: disc outside none;
+//                 color: $mainAreaUlColor;
+//                 margin-bottom: 10px;
+//                 margin-left: 15px;
+//                 width: 99%;
+//             }
+
+//             li:last-child {
+//                 margin-bottom: 0px;
+//             }
+//         }
+//     }
+
+//     #judges {
+//         text-align: center;
+
+//         h1,
+//         h2,
+//         h3,
+//         h4,
+//         h5,
+//         h6 {
+//             margin-bottom: 0px;
+//         }
+
+//         a,
+//         a:visited {
+//             text-decoration: none;
+//         }
+
+//         .judge-box {
+//             display: inline-block;
+//             vertical-align: top;
+//             margin-top: 40px;
+//             width: 250px;
+//             text-align: center;
+//             cursor: pointer;
+//             .judge-photo {
+//                 width: 120px;
+//                 height: 120px;
+//                 position: relative;
+//                 overflow: hidden;
+//                 left: 55px;
+//                 -o-border-radius: 50%;
+//                 border-radius: 50%;
+//                 border: solid 1px $mainAreaBorder;
+//                 img {
+//                     height: 100%;
+//                     width: auto;
+//                     position: relative;
+//                 }
+//             }
+
+//             .judge-name {
+//                 font-family: $altFontStack;
+//                 font-size: 21px;
+//                 padding: 10px 0 10px 0;
+//             }
+//             .judge-description {
+//                 padding: 0 20px 0 20px;
+//                 color: $mainAreaColor;
+//             }
+//         }
+
+//     }
+
+//     #blog-feed {
+//         background: $white;
+//         .description {
+//             position: relative;
+//             top: -30px;
+//         }
+//         .blog-container {
+//             text-align: left;
+//             .tumblr-more-container {
+//                 text-align: center;
+//             }
+//             article {
+//                 padding-bottom: 60px;
+//                 img {
+//                     width: 100%;
+//                     height: 100%;
+//                 }
+//                 video {
+//                     width: 100%;
+//                 }
+//                 i {
+//                     font-style: italic;
+//                     font-size: 12px;
+//                 }
+//                 h2 {
+//                     font-size: 20px;
+//                 }
+//                 h5 {
+//                     margin-bottom: 30px;
+//                 }
+//             }
+//             article:after {
+//                     content: "";
+//                     display: block;
+//                     height: 1px;
+//                     width: 100%;
+//                     margin-top: 60px;
+//                     background: $mainAreaBorder;
+//             }
+//             article:first-child:before {
+//                     content: "";
+//                     display: block;
+//                     height: 1px;
+//                     width: 100%;
+//                     margin-bottom: 40px;
+//                     background: $mainAreaBorder;
+//             }
+//         }
+//     }
+
+//     #entry-validation-text {
+//         font: 16px/21px $fontStack;
+//     }
+
+//     #entry-submission-form {
+//         fieldset,
+//         input {
+//             margin: 0px;
+//         }
+
+//         input[type="text"],
+//         input[type="email"] {
+//             padding: 7px 4px;
+//             box-sizing: border-box;
+//         }
+
+//         textarea {
+//             resize: vertical;
+//         }
+
+//         textarea,
+//         input[type="text"],
+//         input[type="email"] {
+//             width: 100%;
+//         }
+
+//         legend {
+//             margin-bottom: 5px;
+//         }
+
+//         .description {
+//             font-size: 12px;
+//             color: $mainAreaSubduedText;
+//         }
+
+//         .fieldgroup-field {
+//             margin: auto;
+//             padding: 20px 0px;
+//             margin-left: 60px;
+//             margin-right: 60px;
+//         }
+//         .fieldgroup-field.first {
+//             padding: 0;
+//             margin: inherit;
+//             width: 100%;
+//             margin-left: 0px;
+//         }
+//         .fieldgroup-field.last {
+//             padding-bottom: 40px;
+//         }
+
+//         .social-radio-label {
+//             margin-right: 10px;
+//         }
+
+//         .primary-selected-label {
+//             display: inline-block;
+//             padding: 5px;
+//             background: $highlightBackground;
+//             color: $highlightAreaHeaderColor;
+//             -o-border-radius: 3px;
+//             border-radius: 3px;
+//         }
+
+//         .station-picker-label {
+//             display: block;
+//         }
+
+//         .placeholder-container {
+//             .placeholder-msg {
+//                 font-size: 12px;
+//             }
+
+//             .placeholder-video {
+//                 background-color: $mainAreaSubduedText;
+//                 position: relative;
+//                 .video-preview-text {
+//                     position: absolute;
+//                     left: 50%;
+//                     top: 50%;
+//                     transform: translateY(-50%) translateX(-50%);
+//                     -webkit-transform: translateY(-50%) translateX(-50%);
+//                     -o-transform: translateY(-50%) translateX(-50%);
+//                     color: $mainAreaButtonColor;
+//                 }
+//             }
+//         }
+
+//         .fieldgroup.how-to-reach {
+
+//             .info {
+//                 margin-left: 60px;
+//                 padding: 20px 0 0 0;
+//             }
+
+//             .description {
+//                 display: block;
+//                 margin-bottom: 10px;
+//             }
+
+//             .fieldgroup-field {
+//                 vertical-align: top;
+//             }
+
+//             .fieldgroup-field.even {
+//                 display: inline-block;
+//                 margin-right: 30px;
+//                 width: 38%;
+//                 textarea,
+//                 input[type="text"],
+//                 input[type="email"] {
+//                     width: 100%;
+//                 }
+//             }
+//             .fieldgroup-field.odd {
+//                 display: inline-block;
+//                 width: 39%;
+//                 margin-left: 0px;
+//                 textarea,
+//                 input[type="text"],
+//                 input[type="email"] {
+//                     width: 100%;
+//                 }
+//             }
+//             .fieldgroup-field.first {
+//                 padding: 0;
+//                 margin: inherit;
+//                 width: 100%;
+//             }
+//             .fieldgroup-field.last {
+//                 display: block;
+//                 width: 103%;
+//                 textarea,
+//                 input[type="text"],
+//                 input[type="email"] {
+//                     width: 62%;
+//                 }
+//             }
+
+//             button {
+//                 line-height: 17px;
+//             }
+
+//             #station-search-result-area {
+//                 .station-option {
+//                     position: relative;
+//                     margin: 15px 0;
+//                     line-height: 30px;
+//                     border-bottom: solid 1px $mainAreaCheckboxBackground;
+//                     width: 80%;
+//                     padding: 10px 0;
+//                     text-align: center;
+
+//                 }
+//                 .station-option:last-child {
+//                     border-bottom: none;
+//                 }
+//                 .station-option * {
+//                     display: inline-block;
+//                     position: relative;
+//                     // left: 50%;
+//                     // transform: translateX(-50%);
+//                     width: 200px;
+//                     text-align: center;
+//                 }
+//                 .station-option .station-image-content {
+//                     vertical-align: middle;
+//                     max-width: 150px;
+//                     .station-image {
+//                         width: initial;
+//                     }
+//                 }
+//                 .station-option .station-title {
+//                     font-family: $altFontStack;
+//                     font-size: 14px;
+//                     vertical-align: middle;
+
+//                 }
+//                 .station-option .station-name {
+//                     font-family: $altFontStack;
+//                     padding-top: 5px;
+//                     font-size: 22px;
+//                     vertical-align: middle;
+
+//                 }
+//                 .station-select {
+//                     vertical-align: middle;
+//                     height: 100px;
+
+//                     // top: 50%;
+//                     // transform: translateY(-50%);
+//                     // margin-top: 10px;
+//                 }
+//                 .station-select-button {
+//                     vertical-align: middle;
+//                     width: 60px;
+//                     line-height: 12px;
+//                     padding: 10px 10px;
+
+//                 }
+//             }
+//         }
+
+//         .fieldgroup.about-group {
+//             .middleColumn.fieldgroup div:nth-child(2) {
+//                 padding-bottom: 0px !important;
+//             }
+//             .middleColumn.fieldgroup div:nth-child(3) {
+//                 padding-top: 0px !important;
+//             }
+
+//             #Form_MainEntryForm_GroupGenre {
+//                 margin-top: 5px;
+//                 li {
+//                     width: 25%;
+//                     margin-bottom: 15px;
+//                 }
+//             }
+
+//             #parsley-id-multiple-GroupGenre {
+//                 display: block;
+//                 width: 100%;
+//                 clear: both;
+//             }
+
+//             input[name="isPrimarySocial"] {
+//                 margin-top: 20px;
+//                 margin-bottom: 10px;
+//             }
+
+//             input[name^="Social"] {
+//                 margin-top: 5px;
+//             }
+
+//             .description {
+//                 color: $mainAreaColor;
+//             }
+
+//             .social-url-container {
+//                 .social-input-wrapper {
+
+//                     box-sizing: border-box;
+//                     width:100%;
+//                     border: solid 1px $mainAreaCheckboxBackground;
+//                     border-radius: 2px;
+//                     span {
+//                         margin-left: 10px;
+//                         position: absolute;
+//                         margin: 10px;
+//                     }
+//                     input {
+//                         width: 100%;
+//                         border: none;
+//                         margin-top: 3px;
+//                     }
+//                     input[name="SocialTwitter"] {
+//                         padding-left: 27px;
+//                     }
+//                     input[name="SocialFacebook"] {
+//                         padding-left: 125px;
+//                     }
+//                     input:active,
+//                     input:focus {
+//                         border: none;
+//                         outline: none;
+//                         box-shadow: none;
+//                     }
+//                 }
+
+//                 .selected-social {
+//                     border: solid 1px $mainAreaCheckboxCheckedBackground;
+//                 }
+//             }
+//         }
+
+//         .fieldgroup.about-entry {
+//             .placeholder-container {
+//                 margin-top: 10px;
+//             }
+//         }
+
+//         .fieldgroup.the-rules {
+//             .description {
+//                 display: inline-block;
+//                 font-size: 14px;
+//                 font-weight: 700;
+//                 margin-top: 5px;
+//                 color: $mainAreaColor;
+//             }
+//         }
+//     }
+
+//     #entry-validation-form {
+//         li.valYes {
+//             clear: left;
+//         }
+
+//         .fieldgroup-field {
+//             overflow: auto;
+//             zoom: 1;
+//             border-bottom: solid 1px $mainAreaBorder;
+//             fieldset {
+//                 margin-bottom: 0px;
+//                 legend {
+//                     margin-bottom: 30px;
+//                 }
+//             }
+//         }
+
+//         .fieldgroup-field.first {
+//             border-bottom: none;
+//         }
+
+//         .fieldgroup-field.last {
+//             border-bottom: none;
+//         }
+
+//         .optionset {
+//             li {
+//                 border: solid 1px $mainAreaBorder;
+//                 -o-border-radius: 3px;
+//                 border-radius: 3px;
+//                 width: 100px;
+//             }
+//         }
+
+//         /* hide input */
+//         input[type="radio"]:empty,
+//         input[type="checkbox"]:empty {
+//             margin-left: -9999px;
+//         }
+
+//         /* style label */
+//         input[type="radio"]:empty ~ label,
+//         input[type="checkbox"]:empty ~ label {
+//             position: relative;
+//             float: left;
+//             line-height: 2.5em;
+//             text-indent: 2.6em;
+//             cursor: pointer;
+//             -webkit-user-select: none;
+//             -moz-user-select: none;
+//             -ms-user-select: none;
+//             user-select: none;
+
+//             width: 100%;
+//         }
+
+//         .valNo input[type="radio"]:empty ~ label,
+//         .valNo input[type="checkbox"]:empty ~ label {
+//             text-indent: 2.9em;
+//         }
+
+//         input[type="radio"]:empty ~ label:after,
+//         input[type="checkbox"]:empty ~ label:after {
+//             position: absolute;
+//             display: block;
+//             top: 0;
+//             bottom: 0;
+//             right: 0;
+//             content: '';
+//             width: 2.5em;
+//             border-radius: 3px 0 0 3px;
+//         }
+
+//         /* toggle hover */
+
+//         input[type="radio"]:hover:not(:checked) ~ label,
+//         input[type="checkbox"]:hover:not(:checked) ~ label {
+//             color: $mainAreaCheckboxCheckedColor;
+//             background-color: $mainAreaCheckboxCheckedBackground;
+//         }
+
+//         /* toggle on */
+
+//         input[type="radio"]:checked ~ label,
+//         input[type="checkbox"]:checked ~ label {
+//             color: $mainAreaCheckboxCheckedColor;
+//             background-color: $mainAreaCheckboxCheckedBackground;
+//         }
+
+//         .valYes input[type="radio"]:checked ~ label,
+//         .valYes input[type="checkbox"]:checked ~ label {
+//             text-indent: 2.0em;
+//         }
+
+//         .valYes input[type="radio"]:checked ~ label:after,
+//         .valYes input[type="checkbox"]:checked ~ label:after {
+//             content:'\2714';
+//             text-indent: -0.2em;
+//         }
+//     }
+
+//     .entry-form {
+//         text-align: left;
+
+//         form {
+//             text-align: center;
+//         }
+
+//         h3 {
+//             margin-bottom: 20px;
+//         }
+
+//         input,
+//         label {
+//             display: inline-block;
+//         }
+
+//         fieldset {
+//             text-align: left;
+//         }
+
+//         label,
+//         legend {
+//             font: inherit;
+//             font-weight: 400;
+//         }
+
+//         li {
+//             float: left;
+//             margin: 0 25px 0 0;
+//         }
+
+//         #validation-messages {
+//             display: none;
+//         }
+
+//         .fieldgroup-field {
+//             padding: 30px 0px;
+//             margin: 0px 60px;
+//         }
+
+//         .fieldgroup-field.first {
+//             margin: 0;
+//             padding: 0;
+
+//             h2 {
+//                 margin: 0;
+//             }
+//         }
+
+//         .validation-msg {
+//             color: $mainAreaLinkColor;
+//             display: inline-block;
+//             padding: 0 5px;
+//             margin: 30px 0 0px 0;
+//             text-align: left;
+//             float: left;
+//             clear: both;
+//             border-left: solid 5px $mainAreaLinkColor;
+//         }
+
+//         .field.fieldgroup {
+//             margin-bottom: 30px;
+//             background-color: $mainAreaFormBackground;
+//         }
+
+//         .fieldgroup-field {
+
+//             h2 {
+//                 background: $mainAreaLegendBackground;
+//                 color: $mainAreaButtonColor;
+//                 display: block;
+//                 padding: 10px 30px 10px 30px;
+//                 position: relative;
+//                 font-size: 20px;
+//                 font-weight: 400;
+//                 text-align: center;
+//             }
+//         }
+
+//         .form-minor-section {
+//             legend {
+//                 color: $mainAreaHeaderColor;
+//             }
+//         }
+//     }
+
+//     #tell-your-friends {
+//         .sharelinks {
+//             .share-link {
+//                 margin: 15px 15px 15px 0;
+//                 display: inline-block;
+
+//                 a.link-button:hover,
+//                 button:hover,
+//                 input[type="submit"]:hover {
+//                     color: $white;
+//                 }
+
+//                 img {
+//                     height: 30px;
+//                     display: inline-block;
+//                     vertical-align: middle;
+//                 }
+//                 span {
+//                     font-weight: 400;
+//                     padding-left: 5px;
+//                 }
+//             }
+//             .share-fb {
+//                 .link-button {
+//                     background-color: $facebook;
+//                 }
+//             }
+//             .share-twitter {
+//                 .link-button {
+//                     background-color: $twitter;
+//                 }
+//             }
+//         }
+//     }
+
+//     #browse-entries {
+//         img {
+//             width: 30%;
+//         }
+
+//         .random-video-frame {
+//             background-image: url(../images/browser_component_frame.png);
+//             height: 55px;
+//             position: relative;
+//             padding-bottom: 56.25%;
+
+//             .video-container {
+//                 height: 71%;
+//                 width: 81%;
+//                 position: absolute;
+//                 top: 32px;
+//                 left: 32px;
+//                 padding-bottom: 0px;
+//             }
+//         }
+
+//         .section-link-button-container {
+//             margin-top: 30px;
+//         }
+//     }
+
+//     #peoples-choice-vote {
+
+//         .vote-image-frame {
+
+
+//             .video-container {
+//                 img {
+//                     height: auto;
+//                 }
+
+//             }
+//         }
+
+//         .section-link-button-container {
+//             margin-top: 0px;
+//         }
+//     }
+// }
+
+// body.page.checklist-page {
+//     .newsletter-signup {
+//         background-color: $mainBackground;
+//         .container {
+//             max-width: 660px;
+//             background-color: $highlightBackground;
+//             padding: 40px 20px;
+//         }
+//     }
+// }
+
+
+// body.page.entry {
+//     #mainstage {
+//         background-image: none;
+//     }
+// }
+
+// body.page.update-page {
+//     ul li {
+//         float: none;
+//         label {
+//             color: $mainAreaColor;
+//             font-weight: 400;
+//             margin-top: 0px;
+//         }
+//     }
+
+//     label {
+//         color: $mainAreaUlColor;
+//         font-weight: bold;
+//         margin-top: 30px
+//     }
+// }
+
+
+// /**
+//  * Begin media queries
+//  */
+
+// @media only screen and (max-width: 767px) {
+//     body.page {
+//         header {
+//             position:inherit;
+//             top: inherit;
+//             left: inherit;
+
+//             .nav-header {
+
+//                 .social {
+//                     display: none;
+//                 }
+//             }
+
+//             .share-header {
+
+//                 position: inherit;
+//                 height: inherit;
+//                 .share-bar {
+//                     position: inherit;
+//                     left: 0px;
+//                     >span {
+
+//                         display: block;
+//                         text-align: center;
+//                         height: 42px;
+
+//                         a {
+//                             overflow: hidden;
+//                         }
+//                     }
+
+//                     .share-text {
+//                         display: none;
+//                     }
+
+//                     .share-twitter {
+//                         width: 50%;
+//                         text-align: center;
+//                         a {
+//                             width: 153px;
+//                             display: block;
+//                             margin-left: 20px;
+//                             img {
+//                                 margin-left: -50px;
+//                             }
+//                         }
+//                     }
+
+//                     .header-subscription-container {
+//                         border-left: none;
+//                         border-top: solid 1px $headerBackground;
+//                         padding-left: 0px;
+//                     }
+//                 }
+//             }
+//         }
+
+//         #promo-video {
+
+//             .tdc-logo {
+//                 width: 100%;
+//                 height: 150px;
+//             }
+
+//             .sponsors-link {
+//                 width: 40%;
+//             }
+
+//             .container {
+//                 width: 100%;
+//             }
+//         }
+
+//         main {
+//             margin-top: 0px;
+//         }
+
+//         #entry-submission-form {
+//             fieldset,
+//             input {
+//                 margin: 0px;
+//             }
+
+//             textarea,
+//             input[type="text"],
+//             input[type="email"] {
+//                 width: 100%;
+//             }
+
+//             legend {
+//                 margin-bottom: 5px;
+//             }
+
+//             .description {
+//                 font-size: 12px;
+//                 color: $mainAreaSubduedText;
+//             }
+
+//             .fieldgroup-field {
+//                 margin: auto;
+//                 width: 75%;
+//                 display: block;
+//             }
+
+//             .fieldgroup.how-to-reach {
+
+//                 .fieldgroup-field.even {
+//                     display: block;
+//                     width: 75%;
+//                     margin: auto;
+//                 }
+//                 .fieldgroup-field.odd {
+//                     display: block;
+//                     width: 75%;
+//                     margin: auto;
+//                 }
+//                 .fieldgroup-field.first {
+//                     margin: 0;
+//                     padding: inherit;
+//                     width: 100%;
+//                 }
+//                 .fieldgroup-field.last {
+//                     textarea,
+//                     input[type="text"],
+//                     input[type="email"] {
+//                         width: 100%;
+//                     }
+//                 }
+//                 #station-search-result-area {
+//                     .station-option {
+//                         width: 100%;
+//                     }
+//                     .station-select {
+//                         height: 50px;
+//                     }
+//                 }
+//                 #station-search-button {
+//                     width: 100%;
+//                     margin-top: 5px;
+//                 }
+//             }
+
+//             .fieldgroup.about-group {
+//                 #Form_MainEntryForm_GroupGenre {
+//                     li {
+//                         width: 50%;
+//                     }
+//                 }
+//             }
+//         }
+
+//         #browse-entries {
+//             img {
+//                 width: 50%;
+//             }
+//             .random-video-frame {
+//                 background-image: none;
+//                 height: 0;
+//                 .video-container {
+//                     height: 0;
+//                     width: 100%;
+//                     position: absolute;
+//                     top: 0px;
+//                     left: 0px;
+//                     padding-bottom: 56.25%;
+//                 }
+//             }
+//         }
+
+//     }
+
+//     body.page.checklist-page {
+//         .newsletter-signup {
+//             .container {
+//                 width: 380px;
+//             }
+//         }
+//     }
+// }
+
+// /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+// @media only screen and (max-width: 479px) {
+//     body.page {
+
+//         p {
+//             font-size: 16px;
+//         }
+
+//         li {
+//             font-size: 16px;
+//         }
+
+//         footer {
+//             .nav-links {
+//                 display: block;
+//             }
+//         }
+
+//         #promo-video {
+
+//             .tdc-logo {
+//                 width: 100%;
+//             }
+//         }
+
+//         .newsletter-signup {
+//             input {
+//                 width: 108px;
+//             }
+//         }
+
+//         #entry-validation-form {
+
+//             .optionset {
+//                 li {
+//                     margin: 0 0 15px 0;
+//                     width: 175px;
+//                 }
+
+//                 li:last-child {
+//                     margin-bottom: 0px;
+//                 }
+//             }
+
+//             /* style label */
+//             .valYes input[type="radio"]:empty ~ label,
+//             .valYes input[type="checkbox"]:empty ~ label {
+//                 text-indent: 4.4em;
+//             }
+
+//             .valNo input[type="radio"]:empty ~ label,
+//             .valNo input[type="checkbox"]:empty ~ label {
+//                 text-indent: 4.6em;
+//             }
+
+//             /* toggle on */
+//             .valYes input[type="radio"]:checked ~ label,
+//             .valYes input[type="checkbox"]:checked ~ label {
+//                 text-indent: 3.9em;
+//             }
+
+//             .valYes input[type="radio"]:checked ~ label:after,
+//             .valYes input[type="checkbox"]:checked ~ label:after {
+//                 content:'\2714';
+//                 text-indent: -2.1em;
+//             }
+//         }
+
+//         #entry-submission-form {
+//             li {
+//                 font-size: 14px;
+//             }
+
+//             .about-group {
+//                 label {
+//                     display: inline;
+//                 }
+//             }
+//         }
+
+//         #browse-entries {
+//             img {
+//                 width: 50%;
+//             }
+//         }
+
+//     }
+
+//     body.page.checklist-page {
+//         background: $mainBackground;
+//         section.newsletter-signup {
+//             width: 300px;
+//             margin: 0 auto;
+
+//             .container {
+//                 width: auto;
+//             }
+//         }
+//     }
+
+// }
 
