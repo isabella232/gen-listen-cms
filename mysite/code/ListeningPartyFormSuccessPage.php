@@ -5,7 +5,7 @@
  * Render the success page for registering for a Generation Listen Listening Party
  *
  */
-class ListeningPartySuccessPage extends Page
+class ListeningPartyFormSuccessPage extends Page
 {
     static $description = "Listening Party Form Success";
 
@@ -22,7 +22,7 @@ class ListeningPartySuccessPage extends Page
 }
 
 
-class ListeningPartySuccessPage_Controller extends Page_Controller
+class ListeningPartyFormSuccessPage_Controller extends Page_Controller
 {
 
 }
