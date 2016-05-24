@@ -11,12 +11,14 @@ class ListeningPartyFormSuccessPage extends Page
 
     private static $db = array(
         'SuccessPageHeader' => 'Text',
-        'SuccessPageText' => 'HTMLText'
+        'SuccessPageText' => 'HTMLText',
+        'SuccessPageButtonText' => 'Text'
     );
     public function getCMSFields() {
         $fields = parent::getCMSFields();
         $fields->addFieldToTab('Root.Main', new TextField('SuccessPageHeader', 'Success Page Header'));
         $fields->addFieldToTab('Root.Main', new HTMLEditorField('SuccessPageText', 'Success Page Text'));
+        $fields->addFieldToTab('Root.Main', new TextField('SuccessPageButtonText', 'Success Page Button Text'));
         return $fields;
     }
 }
