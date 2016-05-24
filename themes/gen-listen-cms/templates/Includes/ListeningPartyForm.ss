@@ -1,5 +1,5 @@
 <%-- Listening Party submission form --%>
-<section class="entry-form primary-functional">
+<section id="party-form" class="party-form primary-functional">
     <div class="container flex-width">
         <div class="row">
             <div>

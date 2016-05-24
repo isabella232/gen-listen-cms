@@ -3,7 +3,7 @@
 <header class="secondary-informational">
     <div class="container">
         <div class="row nav-header">
-        <img src="{$ThemeDir}/images/branding.png"/>
+        <a href="#"><img src="{$ThemeDir}/images/branding.png"/></a>
         </div>
     </div>
 </header>

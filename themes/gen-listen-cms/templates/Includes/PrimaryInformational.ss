@@ -3,7 +3,6 @@
     <div class="container flex-width">
         <div class="row">
             <div>
-                <h3>$PrimaryInformationalHeader</h3>
                 <p>
                     $PrimaryInformationalText
                 </p>
