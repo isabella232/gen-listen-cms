@@ -12,6 +12,7 @@ class ListeningPartyFormPage extends Page
     private static $db = array(
         'BannerText' => 'HTMLText',
         'BannerGraphic' => 'HTMLText',
+        'SuccessUrl' => 'Text',
         'PrimaryInformationalHeader' => 'Text',
         'PrimaryInformationalText' => 'HTMLText'
     );
@@ -19,6 +20,7 @@ class ListeningPartyFormPage extends Page
         $fields = parent::getCMSFields();
         $fields->addFieldToTab('Root.Main', new HTMLEditorField('BannerText', 'Banner Text '));
         $fields->addFieldToTab('Root.Main', new HTMLEditorField('BannerGraphic', 'Banner Graphic'));
+        $fields->addFieldToTab('Root.Main', new TextField('SuccessUrl', 'Name of success page to redirect to'));
         $fields->addFieldToTab('Root.Main', new TextField('PrimaryInformationalHeader', 'Primary Informational Header'));
         $fields->addFieldToTab('Root.Main', new HTMLEditorField('PrimaryInformationalText', 'Primary Informational Text'));
         return $fields;
@@ -84,6 +86,10 @@ class ListeningPartyFormPage_Controller extends Page_Controller
         {
             $user = new NPRUser($email, intval($stationId));
             $user->submit();
+            
+            $smcData = new SMCFormData($user->getUserId(), $firstName, $lastName, $email, $zipCode, $hostingDate, $twitter, $instagram, $stationId);
+            $smcData->submit();
+
         }
         catch (Exception $e)
         {
@@ -99,6 +105,7 @@ class ListeningPartyFormPage_Controller extends Page_Controller
             return $this->redirectBack();
         }
 
+        
         return $this->redirect(Director::baseURL() . 'success');
     }
 
