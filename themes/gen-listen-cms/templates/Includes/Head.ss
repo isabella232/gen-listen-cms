@@ -10,6 +10,17 @@
     <meta name="author" content="$SiteConfig.Title">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <meta property="og:title" content="{$ShareTitle}" />
+    <meta property="og:url" content="{$ShareUrl}" />
+    <meta property="og:description" content="{$ShareText}" />
+    <meta property="og:image" content="{$ShareImageLink}" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{$ShareCreator}">
+    <meta name="twitter:creator" content="{$ShareCreator}">
+    <meta name="twitter:title" content="{$ShareTitle}">
+    <meta name="twitter:description" content="{$ShareText}">
+    <meta name="twitter:image" content="{$ShareImageLink}">
+
     <% require themedCSS(fonts/GothamSSm) %>
     <% require themedCSS(fonts/Knockout) %>
     <% require themedCSS(style) %>
