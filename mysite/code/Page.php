@@ -2,10 +2,31 @@
 class Page extends SiteTree {
 
 	private static $db = array(
+		'PageClass' => 'Text',
+		'ShareUrl'  => 'Text',
+		'ShareImageLink' => 'Text',
+		'ShareTitle' => 'Text',
+		'ShareText' => 'Text',
+		'ShareCreator' => 'Text'
 	);
 
 	private static $has_one = array(
 	);
+
+	/**
+	 * What and how the template variables are managed in the CMS
+	 * @return mixed
+	 */
+	public function getCMSFields() {
+	    $fields = parent::getCMSFields();
+	    $fields->addFieldToTab('Root.Main', new TextField('PageClass', 'Page CSS Class'));
+	    $fields->addFieldToTab('Root.Main', new TextField('ShareUrl', 'Share Url'));
+	    $fields->addFieldToTab('Root.Main', new TextField('ShareImageLink', 'Share Image Link'));
+	    $fields->addFieldToTab('Root.Main', new TextField('ShareTitle', 'Share Title'));
+	    $fields->addFieldToTab('Root.Main', new TextField('ShareText', 'Share Message'));
+	    $fields->addFieldToTab('Root.Main', new TextField('ShareCreator', 'Share Creator'));
+	    return $fields;
+	}
 
 }
 class Page_Controller extends ContentController {
