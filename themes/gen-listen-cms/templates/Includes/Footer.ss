@@ -1,4 +1,4 @@
-<footer class="section-band alt-section">
+<footer class="secondary-informational">
     <div class="container">
         <div class="row nav-footer">
             <nav class="site-nav">

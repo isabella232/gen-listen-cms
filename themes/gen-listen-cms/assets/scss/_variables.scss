@@ -12,121 +12,35 @@ If you do, wire them up with the semantic variable names below and ONLY use thes
 
 // Site Colors
 
-$white: #fff;
-$offWhite: #eee;
-$lightGrey: #ccc;
-$darkGrey: #333;
-$slate: #888;
-$darkerGrey: #141414;
-$black: #000;
-$iron: #666;
-
-$bloodOrange: #f05b4e;
-$merlot: #953056;
-$pukeGreen: #00c956;
-$tan: #e8e5dd;
-$pink: #cc5a99;
-
-$lightBlue: #b8c5e0;
-$neonBlue: #4a90e2;
-$lavender: #6b88c6;
-$greyBlue: #334554;
-$greyBlue2: #5c667a;
-$darkBlue: #2d323c;
+$black: #000000;
+$turquoise: #069fab;
+$beige: #faf5ef;
+$red: #dc3439;
+$white: #ffffff;
+$slate: #666666;
 
 $twitter: #55ACEE;
 $facebook: #3B5998;
-
+$tumblr: #37465D;
 
 /*
 PLEASE READ:
 
 Below are semantic variables for use in other sass files. Please ONLY use these values when applicable.
-
  */
 
-// backgrounds
-$headerBackground: $darkBlue;
-$shareBackground: $greyBlue;
-$mainBackground: $tan;
-$mainAreaLegendBackground: $merlot;
-$mainAreaFormBackground: $white;
-$mainAreaUlBackground: $white;
-$mainAreaCheckboxBackground: $lightGrey;
-$altBackground: $black;
-$tertiaryBackground: $white;
-$tertiaryAreaAltBackground: $offWhite;
-$subduedBackground: $offWhite;
-$highlightBackground: $merlot;
-$quaternaryBackground: $iron;
+$buttonBg: $red;
+$buttonTxt: $white;
 
+$primaryInformationalBg: $turquoise;
+$primaryInformationalTxt: $white;
 
-// font colors
-$headerColor: $greyBlue2;
-$headerLinkColor: $lavender;
-$headerLinkOverColor: $lightBlue;
+$primaryFunctionalBg: $beige;
+$primaryFunctionalTxt: $slate;
 
-$shareColor: $neonBlue;
+$secondaryInformationalBg: $black;
+$secondaryInformationalTxt: $white;
 
-$mainAreaColor: $darkGrey;
-$mainAreaHeaderColor: $darkGrey;
-$mainAreaLinkColor: $merlot;
-$mainAreaLinkOverColor: $darkGrey;
-$mainAreaButtonBackground: $darkGrey;
-$mainAreaButtonColor: $white;
-$mainAreaButtonOverColor: $merlot;
-$mainAreaBorder: $lightGrey;
-$mainAreaCheckboxColor: $darkGrey;
-$mainAreaCheckboxCheckedBackground: $merlot;
-$mainAreaCheckboxCheckedColor: $white;
-$mainAreaUlColor: $merlot;
-$mainAreaUlLinkOverColor: $darkGrey;
-$mainAreaSubduedText: $slate;
-
-
-$altAreaColor: $white;
-$altAreaHeaderColor: $white;
-$altAreaLinkColor: $lavender;
-$altAreaLinkOverColor: $lightBlue;
-$altAreaButtonBackground: $white;
-$altAreaButtonColor: $darkGrey;
-$altAreaButtonOverColor: $merlot;
-
-$tertiaryAreaColor: $darkGrey;
-$tertiaryAreaHeaderColor: $darkGrey;
-$tertiaryAreaLinkColor: $lavender;
-$tertiaryAreaLinkOverColor: $lightBlue;
-$tertiaryAreaButtonBackground: $darkGrey;
-$tertiaryAreaButtonColor: $white;
-$tertiaryAreaButtonOverColor: $offWhite;
-
-$quaternaryAreaColor: $white;
-$quaternaryAreaHeaderColor: $white;
-$quaternaryAreaLinkColor: $white;
-$quaternaryAreaLinkOverColor: $white;
-$quaternaryAreaButtonBackground: $darkGrey;
-$quaternaryAreaButtonColor: $white;
-$quaternaryAreaButtonOverColor: $offWhite;
-
-$subduedAreaColor: $darkGrey;
-$subduedAreaHeaderColor: $darkGrey;
-$subduedAreaLinkColor: $lavender;
-$subduedAreaLinkOverColor: $darkGrey;
-$subduedAreaButtonBackground: $darkGrey;
-$subduedAreaButtonColor: $white;
-$subduedAreaButtonOverColor: $offWhite;
-
-$subduedAreaUlBackground: $white;
-$subduedAreaUlColor: $merlot;
-$subduedAreaUlLinkOverColor: $darkGrey;
-
-$highlightAreaColor: $white;
-$highlightAreaHeaderColor: $white;
-$highlightAreaLinkColor: $white;
-$highlightAreaLinkOverColor: $white;
-$highlightAreaButtonBackground: $darkGrey;
-$highlightAreaButtonColor: $white;
-$highlightAreaButtonOverColor: $merlot;
 
 /* fonts */
 $fontStack: "Gotham SSm", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
