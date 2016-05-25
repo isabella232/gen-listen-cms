@@ -4,6 +4,7 @@
         <div class="row">
             <div>
                 <div id="errors"></div>
+                <img class="main-logo" src="{$ThemeDir}/images/GL_parties_horiz_revised.png"/>
                 $ListeningPartyForm
             </div>
         </div>

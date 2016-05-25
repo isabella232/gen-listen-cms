@@ -55,7 +55,31 @@ class ListeningPartyFormPage_Controller extends Page_Controller
             new FormAction('doSubmit', 'Submit')
         );
 
-        $form = new Form($this, 'ListeningPartyForm', $fields, $actions, null);
+        /** @see https://github.com/sheadawson/silverstripe-zenvalidator */
+        /** @var ZenValidator $validator */
+        $validator = ZenValidator::create(null, true, false);
+
+        $validator->addRequiredFields(array(
+            'firstName'  => 'Please enter your first name.',
+            'lastName'  => 'Please enter your last name.',
+            'email'  => 'Please enter your email address.',
+            'zipCode'  => 'Please enter your 5-digit zip code.',
+            'hostingDate'  => 'Please enter your hosting date."'
+        ));
+
+        $validator->setConstraint('email', Constraint_type::create('email'));
+        $validator->setConstraint('zipCode', Constraint_regex::create("/^\d{5}$/")->setMessage('Please enter your 5-digit zip code.'));
+
+        $form = new Form($this, 'ListeningPartyForm', $fields, $actions, $validator);
+
+        // in case of error redirect, populate the form again
+        if(is_array(Session::get('ListeningPartyForm')))
+        {
+            $form->loadDataFrom(Session::get("ListeningPartyForm"));
+
+            // clear the data, so we don't get into a permafilled form
+            Session::clear("ListeningPartyForm");
+        }
 
         return $form;
     }
