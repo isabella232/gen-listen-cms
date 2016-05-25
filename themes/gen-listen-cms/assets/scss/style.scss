@@ -132,6 +132,11 @@ body.page {
         text-transform: uppercase;
     }
 
+    input {
+        font: 14px/21px $fontStack;
+        -webkit-text-size-adjust: none;
+    }
+
     a.link-button,
     button,
     input[type="submit"] {
@@ -283,118 +288,7 @@ body.page {
             img {
                 height: 150px;
             }
-            // .site-nav {
-            //     display: inline-block;
-            //     height: inherit;
-            // }
-
-            // .site-nav ul {
-            //     height: inherit;
-            //     overflow-x: auto;
-            //     overflow-y: hidden;
-            //     white-space: nowrap;
-            //     width: auto;
-            //     li {
-            //         line-height: 18px;
-            //     }
-            // }
-
-            // li {
-            //     display: inline-block;
-            // }
-
-            // a {
-            //     display: inline-block;
-            // }
-
-            // a.nav-link {
-            //     color: $headerLinkColor;
-            //     font-size: 13px;
-            //     font-weight: 600;
-            //     text-decoration: none;
-
-            //     margin-top: 13px;
-            //     margin-left: 20px;
-            // }
-
-            // a:hover {
-            //     color: $headerLinkOverColor;
-            // }
-
-            // .social {
-            //     display: inline-block;
-            //     position: absolute;
-            //     right: 0;
-
-            //     span {
-            //         color: $headerColor;
-            //         display: inline-block;
-            //         font-size: 14px;
-            //         margin-top: 13px;
-            //         margin-right: 20px;
-            //     }
-
-            //     a {
-            //         color: $headerColor;
-            //     }
-            // }
         }
-
-        // .share-header {
-        //     background-color: $shareBackground;
-        //     width: 100%;
-        //     height: 42px;
-        //     position: relative;
-        //     margin-bottom: 0px;
-
-        //     .share-bar {
-        //         height: inherit;
-        //         width: 100%;
-        //         position: absolute;
-        //         left: 20px;
-        //         overflow: hidden;
-
-        //         >span {
-        //             font-weight: 500;
-        //             font-size: 13px;
-        //             letter-spacing: 2px;
-        //             float: left;
-        //         }
-
-        //         .share-text {
-        //             padding-top: 10px;
-        //             margin-right: 20px;
-        //         }
-
-        //         .share-hashtag {
-        //             color: $shareColor;
-        //         }
-
-        //         .header-subscription-container {
-        //             padding-top: 0px;
-        //             border-left: solid 1px $headerBackground;
-        //             padding-left: 20px;
-        //             height: 40px;
-        //             vertical-align: top;
-
-        //             form {
-        //                 display: inline-block;
-        //                 input {
-        //                     margin-left: 10px;
-        //                     margin-top: 7px;
-        //                     display: inline-block;
-        //                     height: 15px;
-        //                 }
-        //             }
-
-        //         }
-
-
-
-        //     }
-
-
-        // }
     }
 
     .party-form {
@@ -513,6 +407,10 @@ body.page {
             margin-bottom: 5px;
         }
 
+        button {
+            line-height: 17px;
+        }
+
         .description {
             font-size: 12px;
             // color: $mainAreaSubduedText;
@@ -532,6 +430,13 @@ body.page {
         // }
         .fieldgroup-field.last {
             padding-bottom: 40px;
+            display: block;
+            width: 103%;
+            textarea,
+            input[type="text"],
+            input[type="email"] {
+                width: 62%;
+            }
         }
 
         .primary-selected-label {
@@ -640,50 +545,25 @@ body.page {
                 display: block;
             }
 
-            .fieldgroup.how-to-reach {
-
-                .fieldgroup-field.even {
-                    display: block;
-                    width: 75%;
-                    margin: auto;
-                }
-                .fieldgroup-field.odd {
-                    display: block;
-                    width: 75%;
-                    margin: auto;
-                }
-                .fieldgroup-field.first {
-                    margin: 0;
-                    padding: inherit;
+            .fieldgroup-field.last {
+                width: 75%;
+                textarea,
+                input[type="text"],
+                input[type="email"] {
                     width: 100%;
-                }
-                .fieldgroup-field.last {
-                    textarea,
-                    input[type="text"],
-                    input[type="email"] {
-                        width: 100%;
-                    }
-                }
-                #station-search-result-area {
-                    .station-option {
-                        width: 100%;
-                    }
-                    .station-select {
-                        height: 50px;
-                    }
-                }
-                #station-search-button {
-                    width: 100%;
-                    margin-top: 5px;
                 }
             }
-
-            .fieldgroup.about-group {
-                #Form_MainEntryForm_GroupGenre {
-                    li {
-                        width: 50%;
-                    }
+            #station-search-result-area {
+                .station-option {
+                    width: 100%;
                 }
+                .station-select {
+                    height: 50px;
+                }
+            }
+            #station-search-button {
+                width: 100%;
+                margin-top: 5px;
             }
         }
 
