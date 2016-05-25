@@ -1,0 +1,18 @@
+ValidationLogicCriteria:
+  comparisons:
+    isEqualTo: "=="
+    isEmpty: ""
+    isGreaterThan: ">"
+    isLessThan: "<"
+    contains: ""
+    isChecked: ""
+    hasCheckedOption: ""
+    hasCheckedAtLeast: ""
+    hasCheckedLessThan: ""
+FormField:
+  extensions:
+    - ZenValidatorFormFieldExtension
+
+Director:
+  rules:
+    'ZenValidatorTestController': 'ZenValidatorTestController'

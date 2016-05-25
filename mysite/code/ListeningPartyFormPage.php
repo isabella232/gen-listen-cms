@@ -115,6 +115,8 @@ class ListeningPartyFormPage_Controller extends Page_Controller
         if (!empty($placeholder)) {
             $field->setAttribute('placeholder', $placeholder);
         }
+
+        $field->setSmallFieldHolderTemplate("TextFieldWithStationFinder_holder_small");
         return $field;
     }
 }

@@ -438,7 +438,7 @@ body.page {
         }
 
         .field.fieldgroup {
-            margin-bottom: 30px;
+            // margin-bottom: 30px;
             // background-color: $mainAreaFormBackground;
         }
 
@@ -718,6 +718,13 @@ body.page {
 @media only screen and (max-width: 479px) {
 
     body.page {
+
+        #party-form {
+            li {
+                font-size: 14px;
+            }
+        }
+
         footer .container {
             .nav-footer {
                 vertical-align: middle;
