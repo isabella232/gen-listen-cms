@@ -68,7 +68,7 @@ class ListeningPartyFormPage_Controller extends Page_Controller
      * @param Form $form
      * @return mixed
      */
-    public function doEntrySubmit($data, Form $form)
+    public function doSubmit($data, Form $form)
     {
         // contact info
         $firstName = $data['firstName'];
@@ -78,7 +78,7 @@ class ListeningPartyFormPage_Controller extends Page_Controller
         $hostingDate = $data['hostingDate'];
         $twitter = $data['twitter'];
         $instagram = $data['instagram'];
-        $stationId = $data['stationId'];
+        $stationId = $data['PrimaryStation'];
 
 
         try
