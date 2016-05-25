@@ -10,9 +10,9 @@
             </nav>
             <nav class="social-nav">
                 <ul>
-                    <li><a href="" class="share-icon facebook"><img src="{$ThemeDir}/images/social/icon_facebook.png" /></a></li>
-                    <li><a href="" class="share-icon tumblr"><img src="{$ThemeDir}/images/social/icon_tumblr.png" /></a></li>
-                    <li><a href="" class="share-icon twitter"><img src="{$ThemeDir}/images/social/icon_twitter.png" /></a></li>
+                    <li><a href="#" class="share-icon share-fb facebook"><img src="{$ThemeDir}/images/social/icon_facebook.png" /></a></li>
+                    <li><a href="#" class="share-icon share-tumblr tumblr"><img src="{$ThemeDir}/images/social/icon_tumblr.png" /></a></li>
+                    <li><a href="#" class="share-icon share-twitter twitter"><img src="{$ThemeDir}/images/social/icon_twitter.png" /></a></li>
                 </ul>
             </nav>
         </div>

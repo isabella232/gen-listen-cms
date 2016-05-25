@@ -120,6 +120,10 @@ body.page {
         padding-bottom: 40px;
     }
 
+    span.required {
+        color: $red;
+    }
+
     a.link-button {
         display: inline-block;
         text-decoration: none;
@@ -433,14 +437,19 @@ body.page {
             margin: 0px 60px;
         }
 
-        .fieldgroup-field.first {
-            margin: 0;
-            padding: 0;
-
-            h2 {
-                margin: 0;
-            }
+        .field.fieldgroup {
+            margin-bottom: 30px;
+            // background-color: $mainAreaFormBackground;
         }
+
+        // .fieldgroup-field.first {
+        //     margin: 0;
+        //     padding: 0;
+
+        //     h2 {
+        //         margin: 0;
+        //     }
+        // }
 
         .validation-msg {
             // color: $mainAreaLinkColor;
@@ -451,11 +460,6 @@ body.page {
             float: left;
             clear: both;
             border-left: solid 5px $white;
-        }
-
-        .field.fieldgroup {
-            margin-bottom: 30px;
-            // background-color: $mainAreaFormBackground;
         }
 
         .fieldgroup-field {
@@ -520,18 +524,14 @@ body.page {
             margin-left: 60px;
             margin-right: 60px;
         }
-        .fieldgroup-field.first {
-            padding: 0;
-            margin: inherit;
-            width: 100%;
-            margin-left: 0px;
-        }
+        // .fieldgroup-field.first {
+        //     padding: 0;
+        //     margin: inherit;
+        //     width: 100%;
+        //     margin-left: 0px;
+        // }
         .fieldgroup-field.last {
             padding-bottom: 40px;
-        }
-
-        .social-radio-label {
-            margin-right: 10px;
         }
 
         .primary-selected-label {
@@ -547,228 +547,65 @@ body.page {
             display: block;
         }
 
-        .placeholder-container {
-            .placeholder-msg {
-                font-size: 12px;
-            }
-
-            .placeholder-video {
-                // background-color: $mainAreaSubduedText;
+        #station-search-result-area {
+            .station-option {
                 position: relative;
-                .video-preview-text {
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translateY(-50%) translateX(-50%);
-                    -webkit-transform: translateY(-50%) translateX(-50%);
-                    -o-transform: translateY(-50%) translateX(-50%);
-                    // color: $mainAreaButtonColor;
-                }
+                margin: 15px 0;
+                line-height: 30px;
+                border-bottom: solid 1px $black;
+                width: 80%;
+                padding: 10px 0;
+                text-align: center;
+
             }
-        }
-
-        .fieldgroup.how-to-reach {
-
-            .info {
-                margin-left: 60px;
-                padding: 20px 0 0 0;
+            .station-option:last-child {
+                border-bottom: none;
             }
-
-            .description {
-                display: block;
-                margin-bottom: 10px;
-            }
-
-            .fieldgroup-field {
-                vertical-align: top;
-            }
-
-            .fieldgroup-field.even {
+            .station-option * {
                 display: inline-block;
-                margin-right: 30px;
-                width: 38%;
-                textarea,
-                input[type="text"],
-                input[type="email"] {
-                    width: 100%;
+                position: relative;
+                // left: 50%;
+                // transform: translateX(-50%);
+                width: 200px;
+                text-align: center;
+            }
+            .station-option .station-image-content {
+                vertical-align: middle;
+                max-width: 150px;
+                .station-image {
+                    width: initial;
                 }
             }
-            .fieldgroup-field.odd {
-                display: inline-block;
-                width: 39%;
-                margin-left: 0px;
-                textarea,
-                input[type="text"],
-                input[type="email"] {
-                    width: 100%;
-                }
-            }
-            .fieldgroup-field.first {
-                padding: 0;
-                margin: inherit;
-                width: 100%;
-            }
-            .fieldgroup-field.last {
-                display: block;
-                width: 103%;
-                textarea,
-                input[type="text"],
-                input[type="email"] {
-                    width: 62%;
-                }
-            }
-
-            button {
-                line-height: 17px;
-            }
-
-            #station-search-result-area {
-                .station-option {
-                    position: relative;
-                    margin: 15px 0;
-                    line-height: 30px;
-                    border-bottom: solid 1px $black;
-                    width: 80%;
-                    padding: 10px 0;
-                    text-align: center;
-
-                }
-                .station-option:last-child {
-                    border-bottom: none;
-                }
-                .station-option * {
-                    display: inline-block;
-                    position: relative;
-                    // left: 50%;
-                    // transform: translateX(-50%);
-                    width: 200px;
-                    text-align: center;
-                }
-                .station-option .station-image-content {
-                    vertical-align: middle;
-                    max-width: 150px;
-                    .station-image {
-                        width: initial;
-                    }
-                }
-                .station-option .station-title {
-                    font-family: $altFontStack;
-                    font-size: 14px;
-                    vertical-align: middle;
-
-                }
-                .station-option .station-name {
-                    font-family: $altFontStack;
-                    padding-top: 5px;
-                    font-size: 22px;
-                    vertical-align: middle;
-
-                }
-                .station-select {
-                    vertical-align: middle;
-                    height: 100px;
-
-                    // top: 50%;
-                    // transform: translateY(-50%);
-                    // margin-top: 10px;
-                }
-                .station-select-button {
-                    vertical-align: middle;
-                    width: 60px;
-                    line-height: 12px;
-                    padding: 10px 10px;
-
-                }
-            }
-        }
-
-        .fieldgroup.about-group {
-            .middleColumn.fieldgroup div:nth-child(2) {
-                padding-bottom: 0px !important;
-            }
-            .middleColumn.fieldgroup div:nth-child(3) {
-                padding-top: 0px !important;
-            }
-
-            #Form_MainEntryForm_GroupGenre {
-                margin-top: 5px;
-                li {
-                    width: 25%;
-                    margin-bottom: 15px;
-                }
-            }
-
-            #parsley-id-multiple-GroupGenre {
-                display: block;
-                width: 100%;
-                clear: both;
-            }
-
-            input[name="isPrimarySocial"] {
-                margin-top: 20px;
-                margin-bottom: 10px;
-            }
-
-            input[name^="Social"] {
-                margin-top: 5px;
-            }
-
-            .description {
-                // color: $mainAreaColor;
-            }
-
-            .social-url-container {
-                .social-input-wrapper {
-
-                    box-sizing: border-box;
-                    width:100%;
-                    border: solid 1px $black;
-                    border-radius: 2px;
-                    span {
-                        margin-left: 10px;
-                        position: absolute;
-                        margin: 10px;
-                    }
-                    input {
-                        width: 100%;
-                        border: none;
-                        margin-top: 3px;
-                    }
-                    input[name="SocialTwitter"] {
-                        padding-left: 27px;
-                    }
-                    input[name="SocialFacebook"] {
-                        padding-left: 125px;
-                    }
-                    input:active,
-                    input:focus {
-                        border: none;
-                        outline: none;
-                        box-shadow: none;
-                    }
-                }
-
-                .selected-social {
-                    // border: solid 1px $mainAreaCheckboxCheckedBackground;
-                }
-            }
-        }
-
-        .fieldgroup.about-entry {
-            .placeholder-container {
-                margin-top: 10px;
-            }
-        }
-
-        .fieldgroup.the-rules {
-            .description {
-                display: inline-block;
+            .station-option .station-title {
+                font-family: $altFontStack;
                 font-size: 14px;
-                font-weight: 700;
-                margin-top: 5px;
-                // color: $mainAreaColor;
+                vertical-align: middle;
+
+            }
+            .station-option .station-name {
+                font-family: $altFontStack;
+                padding-top: 5px;
+                font-size: 22px;
+                vertical-align: middle;
+
+            }
+            .station-select {
+                vertical-align: middle;
+                height: 100px;
+
+                // top: 50%;
+                // transform: translateY(-50%);
+                // margin-top: 10px;
+            }
+            .station-select-button {
+                vertical-align: middle;
+                width: 60px;
+                line-height: 12px;
+                padding: 10px 10px;
+
             }
         }
+
     }
 
 }
@@ -776,7 +613,7 @@ body.page {
 @media only screen and (max-width: 767px) {
     body.page {
 
-        #entry-submission-form {
+        #party-form {
             fieldset,
             input {
                 margin: 0px;

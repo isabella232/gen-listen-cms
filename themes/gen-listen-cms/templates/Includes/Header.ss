@@ -6,4 +6,5 @@
         <a href="#"><img src="{$ThemeDir}/images/branding.png"/></a>
         </div>
     </div>
+    <input type="hidden" id="share-text" value="{$ShareText}" />
 </header>
