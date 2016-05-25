@@ -50,7 +50,7 @@
 
     $('#station-search-button').on('click', function(e){
         e.preventDefault();
-        $('#station-search-result-area').html('<img src="http://media.npr.org/chrome/loader.gif" />');
+        $('#station-search-result-area').html('');
         $('input[name="PrimaryStation"]').val('');
         var searchTerm = encodeURI($('input[name="PrimaryStationPicker"]').val());
         if (searchTerm.length === 0) {
@@ -76,5 +76,22 @@
             }
         });
     });
+
+    // Parsley is only imported by ZenValidator if the page contains a form with ZenValidator
+    // validating it. Most pages besides the entry form will not have such a thing, so this
+    // check is required.
+    if (typeof Parsley !== "undefined") {
+        // set up the validation
+        $('form.custom-parsley').parsley({
+            errorsWrapper: '<div></div>',
+            errorTemplate: '<small class="error"></small>',
+            errorClass: 'error',
+            // errorsContainer: function (ParsleyField) {
+            //     var $container = ParsleyField.$element.siblings('.fieldholder-small');
+            //     return $container;
+            // },
+            excluded: 'input[type=button], input[type=submit], input[type=reset], input[type=hidden], :hidden, .ignore-validation, #Form_ListeningPartyForm_PrimaryStationPicker'
+        });
+    }
 
 }(jQuery));

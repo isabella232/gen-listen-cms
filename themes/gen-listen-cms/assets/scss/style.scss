@@ -9,12 +9,10 @@
  * Site-specific modifications below here
  */
 
-small.error { color : red; }
-
 body.page {
     font: 14px/21px $fontStack;
     -webkit-text-size-adjust: none;
-
+    small.error { color : $red; }
     // main {
     //     margin-top: 88px;
     // }

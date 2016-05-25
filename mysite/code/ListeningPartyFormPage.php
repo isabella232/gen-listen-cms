@@ -49,8 +49,6 @@ class ListeningPartyFormPage_Controller extends Page_Controller
             )
         );
 
-
-
         $actions = new FieldList(
             new FormAction('doSubmit', 'Submit')
         );
@@ -94,6 +92,9 @@ class ListeningPartyFormPage_Controller extends Page_Controller
      */
     public function doSubmit($data, Form $form)
     {
+        // save the populated fields to the session, in case of error
+        Session::set("ListeningPartyForm", $data);
+
         // contact info
         $firstName = $data['firstName'];
         $lastName = $data['$lastName'];
@@ -129,7 +130,7 @@ class ListeningPartyFormPage_Controller extends Page_Controller
         }
 
 
-        return $this->redirect(Director::baseURL() . 'success');
+        return $this->redirect(Director::baseURL() . $this->SuccessUrl);
     }
 
     private function createStationPickerField($placeholder = null)
