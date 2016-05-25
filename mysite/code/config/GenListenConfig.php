@@ -5,7 +5,10 @@ class GenListenConfig extends DataExtension {
     private static $db = array(
         'NewsletterSubmitUrl'   => 'Text',
         'NPRAPIHost'            => 'Text',
-        'BusAPIKey'             => 'Text'
+        'BusAPIKey'             => 'Text',
+        'SMCClientId'           => 'Text',
+        'SMCClientSecret'       => 'Text',
+        'SMCDataExtension'      => 'Text',
     );
 
     public function updateCMSFields(FieldList $fields) {
@@ -17,6 +20,15 @@ class GenListenConfig extends DataExtension {
         );
         $fields->addFieldToTab("Root.Main",
             new TextField("BusAPIKey", "BUS API Key")
+        );
+        $fields->addFieldToTab("Root.Main",
+            new TextField("SMCClientId", "SMC Client ID")
+        );
+        $fields->addFieldToTab("Root.Main",
+            new TextField("SMCClientSecret", "SMC Client Secret")
+        );
+        $fields->addFieldToTab("Root.Main",
+            new TextField("SMCDataExtension", "SMC Data Extension")
         );
     }
 }

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "76c923f943465c75196bbdba7d6d1d90",
-    "content-hash": "3829c8a0b5d6632c5e5b45a68ee2961d",
+    "hash": "fe0d9567493f3fde1672f7f8d22c1fb4",
+    "content-hash": "adffd22f2f0bff2f0c7f270b9c347021",
     "packages": [
         {
             "name": "composer/installers",
@@ -106,6 +106,40 @@
                 "zikula"
             ],
             "time": "2016-04-13 19:46:30"
+        },
+        {
+            "name": "exacttarget/fuel-sdk-php",
+            "version": "dev-Dot9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jdillick/FuelSDK-PHP.git",
+                "reference": "26cf5f9cade51326e0c8cb35964a66654885c8f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jdillick/FuelSDK-PHP/zipball/26cf5f9cade51326e0c8cb35964a66654885c8f2",
+                "reference": "26cf5f9cade51326e0c8cb35964a66654885c8f2",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-openssl": "*",
+                "ext-soap": "*",
+                "php": ">=5.2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "ET_Client.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "ExactTarget Fuel SDK for PHP",
+            "homepage": "https://code.exacttarget.com/apis-sdks/fuel-sdks/",
+            "time": "2015-01-29 14:41:59"
         },
         {
             "name": "sheadawson/silverstripe-zenvalidator",
@@ -805,7 +839,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "sheadawson/silverstripe-zenvalidator": 20
+        "sheadawson/silverstripe-zenvalidator": 20,
+        "exacttarget/fuel-sdk-php": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
