@@ -133,6 +133,7 @@ class ListeningPartyFormPage_Controller extends Page_Controller
         return $this->redirect(Director::baseURL() . $this->SuccessUrl);
     }
 
+
     private function createStationPickerField($placeholder = null)
     {
         $field = new TextField('PrimaryStationPicker', 'Search for your favorite NPR Member station');
