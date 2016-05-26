@@ -77,7 +77,7 @@ class SMCFormData
 
             $data = $this->mapUpsertRow();
 
-            $dataExtColumns = new \ET_DataExtension_Column();
+            $dataExtColumns = new ET_DataExtension_Column();
             $dataExtColumns->authStub = $client;
             $dataExtColumns->props = ["Name", "FieldType", "IsPrimaryKey"];
             $dataExtColumns->filter = ["Property" => "CustomerKey", "SimpleOperator" => "equals", "Value" => SiteConfig::current_site_config()->SMCDataExtension];
@@ -102,7 +102,7 @@ class SMCFormData
             // map the property values to their respective fields in ET
             $props = $this->mapDataPropertyValuesToColumns($data, $fields); // ['<ColumnName>' => '<Value>', ...]
 
-            $dataExtRow = new \ET_DataExtension_Row();
+            $dataExtRow = new ET_DataExtension_Row();
             $dataExtRow->authStub = $client;
             $dataExtRow->CustomerKey = SiteConfig::current_site_config()->SMCDataExtension;
             $dataExtRow->props = $props;

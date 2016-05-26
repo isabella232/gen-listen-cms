@@ -41,7 +41,7 @@ class ListeningPartyFormPage_Controller extends Page_Controller
                 TextField::create('firstName', 'First Name <span class="required">*</span>'),
                 TextField::create('lastName', 'Last Name <span class="required">*</span>'),
                 TextField::create('email', 'Email <span class="required">*</span>'),
-                TextField::create('zipCode', 'Zip code, if you live in the United States'),
+                TextField::create('zipCode', 'Zip code'),
                 DateField::create('hostingDate', 'When do you plan to host your party? <span class="required">*</span>')->setValue('June 16, 2016')->setConfig('showcalendar', true)->setConfig('dateformat', 'MMMM dd, YYYY')->setConfig('min', '2016-06-16'),
                 LiteralField::create("HeaderSocial", "<div>Where can we find you on the internet?</div>"),
                 $this->createTextWithPrefillField("twitter", "Twitter", null, "@"),
@@ -66,7 +66,7 @@ class ListeningPartyFormPage_Controller extends Page_Controller
         ));
 
         $validator->setConstraint('email', Constraint_type::create('email'));
-        $validator->setConstraint('zipCode', Constraint_regex::create("/^\d{5}$/")->setMessage('Please enter your 5-digit zip code.'));
+        $validator->setConstraint('zipCode', Constraint_regex::create("/^\d{5}$/")->setMessage('Please enter your 5-digit zip code, if you live in the United States.'));
 
         $form = new Form($this, 'ListeningPartyForm', $fields, $actions, $validator);
 
