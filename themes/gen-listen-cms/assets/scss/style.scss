@@ -41,7 +41,8 @@ body.page {
         }
     }
 
-    .primary-informational p {
+    .primary-informational p,
+    .primary-informational h3 {
         font-size: 36px;
         font-weight: bold;
         line-height: 45px;
@@ -665,7 +666,8 @@ body.page {
 
     body.page {
 
-        .primary-informational p{
+        .primary-informational p,
+        .primary-informational h3 {
             font-size: 24px;
             font-weight: bold;
             line-height: 35px;
