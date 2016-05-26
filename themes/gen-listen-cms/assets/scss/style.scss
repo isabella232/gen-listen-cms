@@ -30,6 +30,20 @@ body.page {
         * {
             color: $primaryInformationalTxt;
         }
+
+        a.link-button,
+        button,
+        input[type="submit"] {
+            background-color: $white;
+            color: $red;
+        }
+
+        a.link-button:hover,
+        button:hover,
+        input[type="submit"]:hover {
+            background-color: $gray;
+            color: $white;
+        }
     }
 
     .secondary-informational {
