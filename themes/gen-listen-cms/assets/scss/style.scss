@@ -168,7 +168,8 @@ body.page {
     a.link-button:hover,
     button:hover,
     input[type="submit"]:hover {
-        color: $buttonOverTxt;
+        background-color: $gray;
+        color: $white;
     }
 
     a.link-button.alt,

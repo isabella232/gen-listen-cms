@@ -14,6 +14,9 @@ class SMCFormData
     /** @var int $NPRUserId */
     private $NPRUserId;
 
+    /** @var string $partyName */
+    private $partyName;
+
     /** @var string $firstName */
     private $firstName;
 
@@ -39,9 +42,10 @@ class SMCFormData
     private $stationId;
 
 
-    function __construct($NPRUserId, $firstName, $lastName, $email, $zipCode, $hostingDate, $twitter, $instagram, $stationId)
+    function __construct($NPRUserId, $partyName, $firstName, $lastName, $email, $zipCode, $hostingDate, $twitter, $instagram, $stationId)
     {
         $this->NPRUserId = $NPRUserId;
+        $this->partyName = $partyName;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
@@ -74,39 +78,37 @@ class SMCFormData
                 $accessToken = $this->requestAccessToken();
             }
 
+            $dataFormatted = [$this->mapUpsertRow()]; // needs to be an array for serialization
 
-            $data = $this->mapUpsertRow();
+            // Option 1: this works. Replace with Option 2 if it can be made to work in SMC
+            $response = $this->post($apiUrl, ['Authorization: Bearer ' . $accessToken, 'Content-Type: application/json'], json_encode($dataFormatted));
 
-            $dataExtColumns = new ET_DataExtension_Column();
-            $dataExtColumns->authStub = $client;
-            $dataExtColumns->props = ["Name", "FieldType", "IsPrimaryKey"];
-            $dataExtColumns->filter = ["Property" => "CustomerKey", "SimpleOperator" => "equals", "Value" => SiteConfig::current_site_config()->SMCDataExtension];
+            // Option 2: Can't get below to work
 
-            $response = $dataExtColumns->get();
+            // $fetch = new RestfulService($apiUrl);
+            // $response = $fetch->request(
+            //     "",
+            //     'POST',
+            //     json_encode($dataFormatted),
+            //     [
+            //         'Authorization: Bearer ' . $accessToken,
+            //         'Content-Type: application/json'
+            //     ],
+            //     [
+            //         CURLOPT_CONNECTTIMEOUT => self::TIMEOUT,
+            //         CURLOPT_TIMEOUT => self::TIMEOUT
+            //     ]
+            // );
 
-            $colFields = [];
-
-            if (!empty($response) && is_array($response->results))
-            {
-                $colFields = $response->results;
-            }
-
-            $fields = $this->getColumnFieldNames($colFields);
-
-            if (count($fields) === 0)
-            {
-                throw new \Exception('Unable to create new user. Cannot describe "' . SiteConfig::current_site_config()->SMCDataExtension . '" data extension column properties. ' . print_r($response, true));
-            }
-
-            // Assuming that the $data array adheres to "snake-cased" conventions,
-            // map the property values to their respective fields in ET
-            $props = $this->mapDataPropertyValuesToColumns($data, $fields); // ['<ColumnName>' => '<Value>', ...]
-
-            $dataExtRow = new ET_DataExtension_Row();
-            $dataExtRow->authStub = $client;
-            $dataExtRow->CustomerKey = SiteConfig::current_site_config()->SMCDataExtension;
-            $dataExtRow->props = $props;
-            $response = $dataExtRow->post();
+            // if ($response->getStatusCode() == 200)
+            // {
+            //     error_log(print_r(json_decode($response->getBody()), true));
+            //     return json_decode($response->getBody());
+            // }
+            // else
+            // {
+            //     throw new Exception("Failure submitting SMC request: " . $apiUrl . ":" . print_r($response, true) . " -- " . $response->getStatusCode() . ' - ' . $response->getBody());
+            // }
         }
         catch (Exception $e)
         {
@@ -161,7 +163,11 @@ class SMCFormData
     public function mapUpsertRow()
     {
         return [
-                "user_id" => $this->NPRUserId ? $this->NPRUserId : "",
+            "keys" => [
+                "user_id" => $this->NPRUserId,
+                "party_name" => $this->partyName
+            ],
+            "values" => [
                 "first_name" => $this->firstName ? $this->firstName : "",
                 "last_name" => $this->lastName ? $this->lastName : "",
                 "email" => $this->email ? $this->email : "",
@@ -169,6 +175,7 @@ class SMCFormData
                 "party_date" => $this->hostingDate ? $this->hostingDate : "",
                 "twitter_id" => $this->twitter ? $this->twitter : "",
                 "instagram_id" => $this->instagram ? $this->instagram : ""
+            ]
         ];
     }
 
@@ -210,47 +217,6 @@ class SMCFormData
         curl_close($curl);
 
         return $response;
-    }
-
-    /**
-     * Gets the column name from each field
-     * @param $fields A collection of objects
-     * @return array
-     */
-    public function getColumnFieldNames($fields)
-    {
-        $names = [];
-
-        for ($a=0; $a<count($fields); $a++)
-        {
-            $field = $fields[$a];
-
-            if (property_exists($field, 'Name')){
-                $names[] = $field->Name;
-            }
-        }
-
-        return $names;
-    }
-
-    /**
-     * Maps the properties to a column/field in the data extension
-     * @param $data
-     * @param $fields
-     * @return array
-     */
-    private function mapDataPropertyValuesToColumns($data, $fields)
-    {
-        $props = [];
-
-        foreach ($fields as $field)
-        {
-            if (array_key_exists($field, $data))
-            {
-                $props[$field] = $data[$field];
-            }
-        }
-        return $props;
     }
 
 }

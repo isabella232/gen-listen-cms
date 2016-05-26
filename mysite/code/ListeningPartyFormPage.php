@@ -42,7 +42,7 @@ class ListeningPartyFormPage_Controller extends Page_Controller
                 TextField::create('lastName', 'Last Name <span class="required">*</span>'),
                 TextField::create('email', 'Email <span class="required">*</span>'),
                 TextField::create('zipCode', 'Zip code'),
-                DateField::create('hostingDate', 'When do you plan to host your party? <span class="required">*</span>')->setValue('June 16, 2016')->setConfig('showcalendar', true)->setConfig('dateformat', 'MMMM dd, YYYY')->setConfig('min', '2016-06-16'),
+                DateField::create('hostingDate', 'When do you plan to host your party? <span class="required">*</span>')->setValue(SiteConfig::current_site_config()->DefaultDate)->setConfig('showcalendar', true)->setConfig('dateformat', 'MMMM dd, YYYY')->setConfig('min', '2016-06-16'),
                 LiteralField::create("HeaderSocial", "<div>Where can we find you on the internet?</div>"),
                 $this->createTextWithPrefillField("twitter", "Twitter", null, "@"),
                 $this->createTextWithPrefillField("instagram", "Instagram", null, "@"),
@@ -111,7 +111,7 @@ class ListeningPartyFormPage_Controller extends Page_Controller
             $user = new NPRUser($email, intval($stationId));
             $user->submit();
 
-            $smcData = new SMCFormData($user->getUserId(), $firstName, $lastName, $email, $zipCode, $hostingDate, $twitter, $instagram, $stationId);
+            $smcData = new SMCFormData($user->getUserId(), SiteConfig::current_site_config()->PartyName, $firstName, $lastName, $email, $zipCode, $hostingDate, $twitter, $instagram, $stationId);
             $smcData->submit();
 
         }
