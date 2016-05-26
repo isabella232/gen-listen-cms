@@ -78,6 +78,11 @@
         });
     });
 
+
+    $('#Form_ListeningPartyForm_hostingDate').on('focus', function(e) {
+        $(this).val('');
+    });
+
     // Parsley is only imported by ZenValidator if the page contains a form with ZenValidator
     // validating it. Most pages besides the entry form will not have such a thing, so this
     // check is required.
