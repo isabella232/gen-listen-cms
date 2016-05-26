@@ -26,11 +26,12 @@
         var $button = $('<a class="station-select-button link-button alt" href="#">');
         $button.html('select');
 
+
         $button.on('click', function(e){
             e.preventDefault();
             $oldStation = $(this).parent().parent();
             $oldStation.find(".station-select-button").remove();
-            $oldStation.find(".station-select").append('&#x2713;');
+            $oldStation.find(".station-select").append('<span class="giant-icon">&#x2713;</span>');
             $('#station-search-result-area').empty();
             $('#station-search-result-area').html($oldStation);
             var orgId = $oldStation.find('.station-id').val();

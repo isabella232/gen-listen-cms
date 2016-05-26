@@ -422,6 +422,7 @@ body.page {
             padding-bottom: 40px;
             display: block;
             width: 103%;
+            text-align: center;
             textarea,
             input[type="text"],
             input[type="email"] {
@@ -473,6 +474,9 @@ body.page {
         }
 
         #station-search-result-area {
+            .giant-icon {
+                font-size: 80px;
+            }
             .station-option {
                 position: relative;
                 margin: 15px 0;
@@ -582,7 +586,7 @@ body.page {
                 }
             }
             #station-search-button {
-                width: 100%;
+                width: 120px;
                 margin-top: 5px;
             }
         }
