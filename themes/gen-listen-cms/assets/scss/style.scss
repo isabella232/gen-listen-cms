@@ -41,6 +41,12 @@ body.page {
         }
     }
 
+    .primary-informational {
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 45px;
+    }
+
     button,
     input[type="submit"] {
         -webkit-appearance: none;
@@ -658,6 +664,12 @@ body.page {
 @media only screen and (max-width: 479px) {
 
     body.page {
+
+        .primary-informational {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 45px;
+        }
 
         #party-form {
             li {

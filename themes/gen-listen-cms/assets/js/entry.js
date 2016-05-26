@@ -26,7 +26,6 @@
         var $button = $('<a class="station-select-button link-button alt" href="#">');
         $button.html('select');
 
-
         $button.on('click', function(e){
             e.preventDefault();
             $oldStation = $(this).parent().parent();
