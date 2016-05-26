@@ -23,7 +23,7 @@
         var $orgId = $('<input type="hidden" class="station-id">');
         $orgId.val(orgId);
 
-        var $button = $('<a class="station-select-button link-button" href="#">');
+        var $button = $('<a class="station-select-button link-button alt" href="#">');
         $button.html('select');
 
         $button.on('click', function(e){
@@ -86,10 +86,6 @@
             errorsWrapper: '<div></div>',
             errorTemplate: '<small class="error"></small>',
             errorClass: 'error',
-            // errorsContainer: function (ParsleyField) {
-            //     var $container = ParsleyField.$element.siblings('.fieldholder-small');
-            //     return $container;
-            // },
             excluded: 'input[type=button], input[type=submit], input[type=reset], input[type=hidden], :hidden, .ignore-validation, #Form_ListeningPartyForm_PrimaryStationPicker'
         });
     }
