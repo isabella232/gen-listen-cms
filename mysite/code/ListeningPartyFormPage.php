@@ -41,11 +41,12 @@ class ListeningPartyFormPage_Controller extends Page_Controller
                 TextField::create('firstName', 'First Name <span class="required">*</span>'),
                 TextField::create('lastName', 'Last Name <span class="required">*</span>'),
                 TextField::create('email', 'Email <span class="required">*</span>'),
-                TextField::create('zipCode', 'Zip code'),
-                DateField::create('hostingDate', 'I plan to host my party on <span class="required">*</span>')->setValue('June 16, 2016')->setConfig('showcalendar', true)->setConfig('dateformat', 'MMMM dd, YYYY')->setConfig('min', '2016-06-16'),
+                TextField::create('zipCode', 'Zip code, if you live in the United States'),
+                DateField::create('hostingDate', 'When do you plan to host your party? <span class="required">*</span>')->setValue('June 16, 2016')->setConfig('showcalendar', true)->setConfig('dateformat', 'MMMM dd, YYYY')->setConfig('min', '2016-06-16'),
+                LiteralField::create("HeaderSocial", "<div>Where can we find you on the internet?</div>"),
                 $this->createTextWithPrefillField("twitter", "Twitter", null, "@"),
                 $this->createTextWithPrefillField("instagram", "Instagram", null, "@"),
-                $this->createStationPickerField("Search station name, location, or zip code.")
+                $this->createStationPickerField("Station name, location, or zip code")
             )
         );
 
