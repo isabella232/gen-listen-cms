@@ -8,7 +8,7 @@
                     $SuccessPageText
                 </p>
                 <div>
-                    <a class="link-button" id="" href="#" >$SuccessPageButtonText</a>
+                    <a class="link-button" id="" href="http://generationlisten.npr.org/" >$SuccessPageButtonText</a>
                 </div>
             </div>
         </div>
