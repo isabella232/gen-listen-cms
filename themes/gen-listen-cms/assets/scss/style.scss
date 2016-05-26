@@ -430,10 +430,10 @@ body.page {
 
         .social-input-wrapper {
 
-            box-sizing: border-box;
+            // box-sizing: border-box;
             width:100%;
-            border: solid 1px $gray;
-            border-radius: 2px;
+            // border: solid 1px $gray;
+            // border-radius: 2px;
             span {
                 margin-left: 10px;
                 position: absolute;
@@ -441,7 +441,7 @@ body.page {
             }
             input {
                 width: 100%;
-                border: none;
+                // border: none;
                 margin-top: 3px;
             }
             input[name="twitter"] {
@@ -452,7 +452,7 @@ body.page {
             }
             input:active,
             input:focus {
-                border: none;
+                // border: none;
                 outline: none;
                 box-shadow: none;
             }
