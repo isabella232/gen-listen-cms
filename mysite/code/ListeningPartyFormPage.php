@@ -41,7 +41,7 @@ class ListeningPartyFormPage_Controller extends Page_Controller
                 TextField::create('firstName', 'First Name <span class="required">*</span>'),
                 TextField::create('lastName', 'Last Name <span class="required">*</span>'),
                 TextField::create('email', 'Email <span class="required">*</span>'),
-                TextField::create('zipCode', 'Zip code <span class="required">*</span>'),
+                TextField::create('zipCode', 'Zip code'),
                 DateField::create('hostingDate', 'I plan to host my party on <span class="required">*</span>')->setValue('June 16, 2016')->setConfig('showcalendar', true)->setConfig('dateformat', 'MMMM dd, YYYY')->setConfig('min', '2016-06-16'),
                 TextField::create('twitter', 'Twitter'),
                 TextField::create('instagram', 'Instagram'),
@@ -61,7 +61,6 @@ class ListeningPartyFormPage_Controller extends Page_Controller
             'firstName'  => 'Please enter your first name.',
             'lastName'  => 'Please enter your last name.',
             'email'  => 'Please enter your email address.',
-            'zipCode'  => 'Please enter your 5-digit zip code.',
             'hostingDate'  => 'Please enter your hosting date."'
         ));
 
@@ -97,13 +96,13 @@ class ListeningPartyFormPage_Controller extends Page_Controller
 
         // contact info
         $firstName = $data['firstName'];
-        $lastName = $data['$lastName'];
+        $lastName = $data['lastName'];
         $email = $data['email'];
         $zipCode = $data['zipCode'];
         $hostingDate = $data['hostingDate'];
         $twitter = $data['twitter'];
         $instagram = $data['instagram'];
-        $stationId = $data['PrimaryStation'];
+        $stationId = $data['PrimaryStation'] ? $data['PrimaryStation'] : 0;
 
 
         try

@@ -54,8 +54,8 @@ class SMCFormData
 
     function submit()
     {
-        // try
-        // {
+        try
+        {
             $client = new ET_Client(false, false, [
                     "clientid" => SiteConfig::current_site_config()->SMCClientId,
                     "clientsecret" => SiteConfig::current_site_config()->SMCClientSecret,
@@ -75,9 +75,41 @@ class SMCFormData
             }
 
             $dataFormatted = [$this->mapUpsertRow()]; // needs to be an array for serialization
-            // You must specify the content-type
+
+            // Option 1: this works. Replace with Option 2 if it can be made to work in SMC
             $response = $this->post($apiUrl, ['Authorization: Bearer ' . $accessToken, 'Content-Type: application/json'], json_encode($dataFormatted));
-            error_log(print_r($response, true));
+
+            // Option 2: Can't get below to work
+
+            // $fetch = new RestfulService($apiUrl);
+            // $response = $fetch->request(
+            //     "",
+            //     'POST',
+            //     json_encode($dataFormatted),
+            //     [
+            //         'Authorization: Bearer ' . $accessToken,
+            //         'Content-Type: application/json'
+            //     ],
+            //     [
+            //         CURLOPT_CONNECTTIMEOUT => self::TIMEOUT,
+            //         CURLOPT_TIMEOUT => self::TIMEOUT
+            //     ]
+            // );
+
+            // if ($response->getStatusCode() == 200)
+            // {
+            //     error_log(print_r(json_decode($response->getBody()), true));
+            //     return json_decode($response->getBody());
+            // }
+            // else
+            // {
+            //     throw new Exception("Failure submitting SMC request: " . $apiUrl . ":" . print_r($response, true) . " -- " . $response->getStatusCode() . ' - ' . $response->getBody());
+            // }
+        }
+        catch (Exception $e)
+        {
+            throw new Exception("Failure submitting NPR request: " . $e);
+        }
     }
 
     /**
@@ -131,13 +163,13 @@ class SMCFormData
                 "user_id" => $this->NPRUserId
             ],
             "values" => [
-                "first_name" => $this->firstName,
-                "last_name" => $this->lastName,
-                "email" => $this->email,
-                "zip" => $this->zipCode,
-                "party_date" => $this->hostingDate,
-                "twitter_id" => $this->twitter,
-                "instagram_id" => $this->instagram
+                "first_name" => $this->firstName ? $this->firstName : "",
+                "last_name" => $this->lastName ? $this->lastName : "",
+                "email" => $this->email ? $this->email : "",
+                "zip" => $this->zipCode ? $this->zipCode : "",
+                "party_date" => $this->hostingDate ? $this->hostingDate : "",
+                "twitter_id" => $this->twitter ? $this->twitter : "",
+                "instagram_id" => $this->instagram ? $this->instagram : ""
             ]
         ];
     }

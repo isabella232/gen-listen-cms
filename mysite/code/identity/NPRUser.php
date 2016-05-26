@@ -16,10 +16,10 @@ class NPRUser
     /** @var int $userId */
     private $userId;
 
-    function __construct($email, $orgId)
+    function __construct($email, $orgId = 0)
     {
         $this->email = $email;
-        $this->orgId = $orgId;
+        $this->orgId = intval($orgId) ? intval($orgId) : 0;
     }
 
 
