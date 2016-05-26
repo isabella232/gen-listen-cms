@@ -43,8 +43,8 @@ class ListeningPartyFormPage_Controller extends Page_Controller
                 TextField::create('email', 'Email <span class="required">*</span>'),
                 TextField::create('zipCode', 'Zip code'),
                 DateField::create('hostingDate', 'I plan to host my party on <span class="required">*</span>')->setValue('June 16, 2016')->setConfig('showcalendar', true)->setConfig('dateformat', 'MMMM dd, YYYY')->setConfig('min', '2016-06-16'),
-                TextField::create('twitter', 'Twitter'),
-                TextField::create('instagram', 'Instagram'),
+                $this->createTextWithPrefillField("twitter", "Twitter", null, "@"),
+                $this->createTextWithPrefillField("instagram", "Instagram", null, "@"),
                 $this->createStationPickerField("Search station name, location, or zip code.")
             )
         );
@@ -144,4 +144,20 @@ class ListeningPartyFormPage_Controller extends Page_Controller
         $field->setSmallFieldHolderTemplate("TextFieldWithStationFinder_holder_small");
         return $field;
     }
+
+    private function createTextWithPrefillField($name, $title, $description = null, $leftText = null)
+    {
+        $field = new TextField($name, $title);
+        if (!empty($description)) {
+            $field->setDescription($description);
+        }
+
+        if (!empty($leftText)) {
+            $field->setLeftTitle($leftText);
+        }
+
+        $field->setSmallFieldHolderTemplate("TextFieldWithPrefill_holder_small");
+        return $field;
+    }
+
 }

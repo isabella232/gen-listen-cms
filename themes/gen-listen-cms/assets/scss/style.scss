@@ -428,6 +428,36 @@ body.page {
             }
         }
 
+        .social-input-wrapper {
+
+            box-sizing: border-box;
+            width:100%;
+            border: solid 1px $gray;
+            border-radius: 2px;
+            span {
+                margin-left: 10px;
+                position: absolute;
+                margin: 10px;
+            }
+            input {
+                width: 100%;
+                border: none;
+                margin-top: 3px;
+            }
+            input[name="twitter"] {
+                padding-left: 27px;
+            }
+            input[name="instagram"] {
+                padding-left: 27px;
+            }
+            input:active,
+            input:focus {
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
         .primary-selected-label {
             display: inline-block;
             padding: 5px;
