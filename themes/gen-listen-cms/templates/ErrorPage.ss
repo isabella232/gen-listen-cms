@@ -1,12 +1,12 @@
-<%-- Basic structure of a Tiny Desk page --%>
 <% include Head %>
 <body class="page">
-
+    <% include Header %>
 <main>
     <div>
-       $Content
+        <% include SingleContent %>
     </div>
 </main>
-
+    <% include Footer %>
+    <% include FooterScripts %>
 </body>
 </html>

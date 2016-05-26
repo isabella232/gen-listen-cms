@@ -1,4 +1,3 @@
-<%-- Basic structure of a Tiny Desk page --%>
 <% include Head %>
 <body class="page">
     <% include Header %>
