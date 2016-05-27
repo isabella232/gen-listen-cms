@@ -13,12 +13,14 @@ class ListeningPartyFormPage extends Page
         'SuccessUrl' => 'Text',
         'PrimaryInformationalText' => 'HTMLText',
         'ListeningPartyName' => 'Text',
+        'ListeningPartyImageSrc' => 'Text'
     );
     public function getCMSFields() {
         $fields = parent::getCMSFields();
         $fields->removeFieldFromTab("Root.Main","Content");
         $fields->addFieldToTab('Root.Main', new TextField('ListeningPartyName', 'Name of the listening party'));
         $fields->addFieldToTab('Root.Main', new TextField('SuccessUrl', 'Name of success page to redirect to'));
+        $fields->addFieldToTab('Root.Main', new TextField('ListeningPartyImageSrc', 'Path to image in the theme/images directory'));
         $fields->addFieldToTab('Root.Main', new HTMLEditorField('PrimaryInformationalText', 'Primary Informational Text'));
         return $fields;
     }

@@ -12,7 +12,8 @@ class ListeningPartyFormSuccessPage extends Page
     private static $db = array(
         'SuccessPageHeader' => 'Text',
         'SuccessPageText' => 'HTMLText',
-        'SuccessPageButtonText' => 'Text'
+        'SuccessPageButtonText' => 'Text',
+        'SuccessPageButtonLink' => 'Text'
     );
     public function getCMSFields() {
         $fields = parent::getCMSFields();
@@ -20,6 +21,7 @@ class ListeningPartyFormSuccessPage extends Page
         $fields->addFieldToTab('Root.Main', new TextField('SuccessPageHeader', 'Success Page Header'));
         $fields->addFieldToTab('Root.Main', new HTMLEditorField('SuccessPageText', 'Success Page Text'));
         $fields->addFieldToTab('Root.Main', new TextField('SuccessPageButtonText', 'Success Page Button Text'));
+        $fields->addFieldToTab('Root.Main', new TextField('SuccessPageButtonLink', 'Success Page Button Link Url'));
         return $fields;
     }
 }
