@@ -62,7 +62,16 @@ class NPRUser
             }
             else
             {
-                throw new Exception("Failure submitting NPR request: " . $this->getNewsletterPostUrl() . ":" . print_r($postData, true) . " -- " . $response->getStatusCode() . ' - ' . $response->getBody());
+                $postData['orgId'] = 0;
+                $response = $fetch->request("", 'POST', http_build_query($postData), array('Content-Type: application/x-www-form-urlencoded'), array(CURLOPT_CONNECTTIMEOUT => self::TIMEOUT, CURLOPT_TIMEOUT => self::TIMEOUT ));
+                if ($response->getStatusCode() == 200)
+                {
+                    return $this->parseResponse($response->getBody());
+                }
+                else
+                {
+                    throw new Exception("Failure submitting NPR request: " . $this->getNewsletterPostUrl() . ":" . print_r($postData, true) . " -- " . $response->getStatusCode() . ' - ' . $response->getBody());
+                }
             }
         }
         catch (Exception $e)
