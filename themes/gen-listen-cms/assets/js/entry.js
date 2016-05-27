@@ -94,6 +94,8 @@
             errorClass: 'error',
             excluded: 'input[type=button], input[type=submit], input[type=reset], input[type=hidden], :hidden, .ignore-validation, #Form_ListeningPartyForm_PrimaryStationPicker'
         });
+
+
     }
 
 }(jQuery));
