@@ -11,11 +11,13 @@ class ListeningPartyFormPage extends Page
 
     private static $db = array(
         'SuccessUrl' => 'Text',
-        'PrimaryInformationalText' => 'HTMLText'
+        'PrimaryInformationalText' => 'HTMLText',
+        'ListeningPartyName' => 'Text',
     );
     public function getCMSFields() {
         $fields = parent::getCMSFields();
         $fields->removeFieldFromTab("Root.Main","Content");
+        $fields->addFieldToTab('Root.Main', new TextField('ListeningPartyName', 'Name of the listening party'));
         $fields->addFieldToTab('Root.Main', new TextField('SuccessUrl', 'Name of success page to redirect to'));
         $fields->addFieldToTab('Root.Main', new HTMLEditorField('PrimaryInformationalText', 'Primary Informational Text'));
         return $fields;
@@ -111,7 +113,7 @@ class ListeningPartyFormPage_Controller extends Page_Controller
             $user = new NPRUser($email, intval($stationId));
             $user->submit();
 
-            $smcData = new SMCFormData($user->getUserId(), SiteConfig::current_site_config()->PartyName, $firstName, $lastName, $email, $zipCode, $hostingDate, $twitter, $instagram, $stationId);
+            $smcData = new SMCFormData($user->getUserId(), $this->ListeningPartyName, $firstName, $lastName, $email, $zipCode, $hostingDate, $twitter, $instagram, $stationId);
             $smcData->submit();
 
         }

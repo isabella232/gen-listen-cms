@@ -9,7 +9,6 @@ class GenListenConfig extends DataExtension {
         'SMCClientId'           => 'Text',
         'SMCClientSecret'       => 'Text',
         'SMCDataExtension'      => 'Text',
-        'PartyName'             => 'Text',
         'DefaultDate'           => 'Text'
     );
 
@@ -31,9 +30,6 @@ class GenListenConfig extends DataExtension {
         );
         $fields->addFieldToTab("Root.Main",
             new TextField("SMCDataExtension", "SMC Data Extension")
-        );
-        $fields->addFieldToTab("Root.Main",
-            new TextField("PartyName", "Party Name")
         );
         $fields->addFieldToTab("Root.Main",
             new TextField("DefaultDate", "Default Date")
